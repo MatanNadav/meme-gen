@@ -11,8 +11,9 @@ function onInitGenerator() {
     // drawImgOnCanvas();
 }
 
-function drawImgOnCanvas(img) {
-    console.log('text');
+function drawImgOnCanvas(id) {
+    
+    var img = getImgById(id);
     console.log(img);
     let test = img;
     // console.log('Height: ',img.clientHeight,'Width:',img.clientWidth);
