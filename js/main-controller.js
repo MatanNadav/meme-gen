@@ -15,20 +15,21 @@ function createImgContainer(size) {
     }
 }
 function renderImage(imgs) {
-    var idx = 0;
+    let idx = 0;
     imgs.forEach(img => {
-        var imgBox = document.querySelectorAll('.box');
-        var keywords = img.keywords.join(',')
+        let imgBox = document.querySelectorAll('.box');
+        let keywords = img.keywords.join(',')
         imgBox[idx].innerHTML = `<p class="meme-info">${keywords}</p> <img class="images img-${img.id}" id="${img.id}" src="${img.imgUrl}" 
-        alt="" onclick="onImgClick(this)"> `
+        alt="" onclick="onImgClick(${img.id})">`
         idx++;
     });
 }
 
-function onImgClick(elImg) {
-    
-    window.location = 'generator.html';
-    drawImgOnCanvas(elImg);
+function onImgClick(id) {
+    let img = getImgById(id)
+    drawImgOnCanvas(img);
+    // console.log(img.imgUrl);
+    // window.location = 'generator.html';
     // console.log(img);
 
 }
