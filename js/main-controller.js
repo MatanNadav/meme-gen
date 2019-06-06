@@ -25,9 +25,9 @@ function renderImage(imgs) {
 }
 
 function onImgClick(elImg) {
-    var img = getImgById(+elImg.id);
-    drawImgOnCanvas(img);
-    console.log(img);
+    // var img = getImgById(+elImg.id);
+    drawImgOnCanvas(elImg);
+    // console.log(img);
 
 }
 
