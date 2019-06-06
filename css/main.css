@@ -88,6 +88,20 @@ header .header-wrapper {
     justify-content: space-around; 
 }
 
+/* Search Container */
+
+.search-container {
+    max-width: 20rem;
+    max-height: 4rem;
+    width: 100%;
+    height: 4rem;
+    background-color: antiquewhite;
+    opacity: 1;
+    margin: 2rem auto;
+    
+    
+
+}
 /* Grid HomePage */
 
 .grid-container {
