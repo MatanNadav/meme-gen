@@ -1,9 +1,6 @@
 'use strict'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8740c707d830929630e73080ea4bc974cfc83988
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
@@ -35,10 +32,6 @@ function onSearchMeme(inputVal) {
     renderImage(searchedImgs);
     console.log(searchedImgs);
     
-
-}
-
-function renderSearchedImgs(imgs) {
 
 }
 
