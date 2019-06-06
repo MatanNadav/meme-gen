@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
-    <title>meme-gen</title>
+    <title>Meme Generator</title>
 </head>
-    
-<body onload="init()">
+
+<body onload="onInit()">
     <header>
         <section class="container header-wrapper flex">
             <nav id="mainMenu" class="main-menu-wrapper">
                 <ul class="main-menu clean-list flex">
                     <li>
-                        <a href="meme-generator.html">Generator</a>
+                        <a href="index.html">Home Page</a>
                     </li>
                 </ul>
             </nav>
         </section>
     </header>
-
-
+    <div class="my-canvas flex justify-center"><canvas id="canvas" width="500" height="500"></canvas></div>
     <script src="js/util.js"></script>
-    <script src="js/main-controller.js"></script>
-    <script src="js/main-service.js"></script>
+    <!-- <script src="js/controller.js"></script>
+    <script src="js/service.js"></script> -->
 </body>
 
 </html>
