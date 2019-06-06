@@ -5,29 +5,31 @@ let ctx;
 let gPos = { x: 0, y: 0 }
 
 function onInitGenerator(imgId) {
+    let img = getImage('meme');
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
+    debugger
+    drawImgOnCanvas(img);
 }
 
 function onImgId(imgId) {
-    let imgSrc = getImgById(imgId);
-    let gSrcImg = imgSrc.imgUrl;
-    console.log(gSrcImg);
-    debugger
+    // let imgSrc = getImgById(imgId);
+    // let gSrcImg = imgSrc.imgUrl;
+    // console.log(gSrcImg);
+    // debugger
     // let img = new Image();
     // gSrcImg = getImgById(imgId);
     // img.src = gSrcImg.imgUrl;
     // img.onload = function () {
     //     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     // }
-    drawImgOnCanvas(gSrcImg);
+    // drawImgOnCanvas(gSrcImg);
 }
 
-function drawImgOnCanvas(gSrcImg) {
-    onInitGenerator();
-    console.log(gSrcImg);
+function drawImgOnCanvas(imgObj) {
+    console.log(imgObj);
     let img = new Image();
-    img.src = gSrcImg;
+    img.src = imgObj.imgUrl;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     }
