@@ -22,3 +22,7 @@ function createImage(url, words) {
     }
     return img
 }
+
+function getImg() {
+    return gImg[0]
+}
