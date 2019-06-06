@@ -19,13 +19,15 @@ function renderImage(imgs) {
     imgs.forEach(img => {
         var imgBox = document.querySelectorAll('.box');
         var keywords = img.keywords.join(',')
-        imgBox[idx].innerHTML = `<p class="meme-info">${keywords}</p> <img class="images img-${img.id}" id="${img.id}" src="${img.imgUrl}" alt="" onclick="onImgClick(this)">`
+        imgBox[idx].innerHTML = `<p class="meme-info">${keywords}</p> <img class="images img-${img.id}" id="${img.id}" src="${img.imgUrl}" 
+        alt="" onclick="onImgClick(this)"> `
         idx++;
     });
 }
 
 function onImgClick(elImg) {
-    // var img = getImgById(+elImg.id);
+    
+    window.location = 'generator.html';
     drawImgOnCanvas(elImg);
     // console.log(img);
 
