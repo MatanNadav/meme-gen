@@ -93,6 +93,7 @@ header .header-wrapper {
 }
 
 .box {
+    display: flex;
     border: 1px solid firebrick;
     text-align: center;
     vertical-align: middle;
@@ -110,6 +111,8 @@ header .header-wrapper {
 
 .meme-info{
     display: none;
-    opacity: 0.5;
+    opacity: 0;
     background-color: darkred;
+    width: 100%;
+    height: 100%;
 }
