@@ -1,7 +1,7 @@
 'use strict'
 
-var gImgs;
-var gId = 1;
+let gImgs;
+let gId = 1;
 
 function createImages() {
     let imgs = [
@@ -21,7 +21,7 @@ function createImage(url, words) {
         keywords: words,
         imgUrl: url
     }
-    return img
+    return img;
 }
 
 function getImg() {
