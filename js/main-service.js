@@ -32,7 +32,6 @@ function getImgById(id) {
         })
 }
 
-
 function saveImage(key, imgObj) {
     saveToStorage(key, imgObj);
 }

@@ -1,13 +1,9 @@
 'use strict'
 
-// let gIdImg;
-
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
     renderImage(imgs)
-
-    console.log(imgs);
 }
 
 function createImgContainer(size) {
@@ -30,9 +26,7 @@ function renderImage(imgs) {
 
 function onImgClick(imgId) {
     let imgObj = getImgById(imgId);
-    saveImage('meme', imgObj);    
-    
-    // onInitGenerator();
+    saveImage('meme', imgObj);
 }
 
 function onDisplayInfo(elBox) {
