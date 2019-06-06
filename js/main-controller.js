@@ -1,6 +1,5 @@
 'use strict'
 
-let gIdImg;
 
 function onInitMain() {
     let imgs = createImages();
@@ -29,8 +28,9 @@ function renderImage(imgs) {
 }
 
 function onImgClick(imgId) {
-    gIdImg = imgId
-    onImgId(gIdImg);
+    console.log(imgId)
+    debugger
+    onInitGenerator(imgId);
 }
 
 function onDisplayInfo(elBox) {
