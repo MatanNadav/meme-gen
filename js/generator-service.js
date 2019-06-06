@@ -2,3 +2,6 @@
 
 
 
+function getImgFromMain() {
+    return getImg();
+}

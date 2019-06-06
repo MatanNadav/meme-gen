@@ -1,13 +1,13 @@
 'use strict';
 
-let canvas;
-let ctx;
+let gCanvas;
+let gCtx;
 
 function onInit() {
     console.log('OK');
-    canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
-    // onImg();
+    gCanvas = document.getElementById('canvas');
+    gCtx = gCanvas.getContext('2d');
+    getImg();
 }
 
 function onImg() {
