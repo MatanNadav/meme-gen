@@ -33,6 +33,7 @@ function getImgById(id) {
         })
 }
 
+<<<<<<< HEAD
 function getSearchedMemes(searchStr) {
     // debugger
 
@@ -45,6 +46,8 @@ function getSearchedMemes(searchStr) {
         }
     })
 }
+=======
+>>>>>>> 8740c707d830929630e73080ea4bc974cfc83988
 function saveImage(key, imgObj) {
     saveToStorage(key, imgObj);
 }

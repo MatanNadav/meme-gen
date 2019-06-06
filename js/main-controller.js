@@ -1,12 +1,13 @@
 'use strict'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8740c707d830929630e73080ea4bc974cfc83988
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
     renderImage(imgs)
-
-    console.log(imgs);
 }
 
 function createImgContainer(size) {
@@ -51,9 +52,7 @@ function clearGrid(img) {
 
 function onImgClick(imgId) {
     let imgObj = getImgById(imgId);
-    saveImage('meme', imgObj);    
-    
-    // onInitGenerator();
+    saveImage('meme', imgObj);
 }
 
 function onDisplayInfo(elBox) {
