@@ -22,7 +22,8 @@ function createImage(url, words) {
     var img = {
         id: 1,
         keywords: words,
-        imgUrl: url
+        imgUrl: url,
+        imgSize: 
     }
     return img
 }
