@@ -3,9 +3,8 @@
 
 
 function init() {
-    var imgs = createImages()
+    var imgs = createImages();
    
     console.log(imgs);
-    
-    
+     
 }

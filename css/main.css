@@ -77,3 +77,20 @@ header .header-wrapper {
 .space-around {
     justify-content: space-around; 
 }
+
+/* Grid HomePage */
+
+.grid-container {
+    display: grid;
+    background-color: lightgray;
+    grid-template-rows: repeat(5, 75px);
+    grid-template-columns: repeat(5, 75px);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.box {
+    border: 1px solid white;
+    text-align: center;
+    vertical-align: middle;
+}
