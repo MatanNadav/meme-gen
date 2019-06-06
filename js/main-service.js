@@ -31,3 +31,12 @@ function getImgById(id) {
             return img.id === id;
         })
 }
+
+
+function saveImage() {
+    saveToStorage();
+}
+
+function getImage() {
+    loadFromStorage();
+}

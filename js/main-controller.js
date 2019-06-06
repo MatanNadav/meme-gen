@@ -1,6 +1,6 @@
 'use strict'
 
-let gIdImg;
+// let gIdImg;
 
 function onInitMain() {
     let imgs = createImages();
@@ -29,8 +29,10 @@ function renderImage(imgs) {
 }
 
 function onImgClick(imgId) {
-    gIdImg = imgId
-    onImgId(gIdImg);
+    let imgObj = getImgById(imgId);
+    saveImage('meme', imgObj);    
+    onInitGenerator();
+    // onImgId(gIdImg);
 }
 
 function onDisplayInfo(elBox) {
