@@ -5,7 +5,6 @@ function onInitMain() {
     createImgContainer(imgs.length)
     renderImage(imgs)
 
-
     console.log(imgs);
 }
 

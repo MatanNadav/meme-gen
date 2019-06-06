@@ -24,8 +24,12 @@
     <div class="my-canvas flex justify-center">
         <canvas id="canvas" width="500" height="500"></canvas>
     </div>
-    <input type="text" class="text" onkeyup="drawTextOnCanvas()" placeholder="Enter Text" autofocus>
-    
+    <section class="footer-inputs flex">
+        <button class="add-btn" onclick="">+</button>
+        <input type="text" class="text" onkeyup="drawTextOnCanvas(event)"
+         placeholder="Enter Text" autofocus>
+    </section>
+
     <script src="js/util.js"></script>
     <script src="js/generator-controller.js"></script>
     <script src="js/generator-service.js"></script>

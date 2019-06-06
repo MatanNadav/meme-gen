@@ -2,12 +2,12 @@
 
 let canvas;
 let ctx;
-let pos = { x: x, y: y }
+let pos = { x: 0, y: 0 }
 
 function onInitGenerator() {
     console.log('OK');
     canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
+    ctx = canvas.getContext('2d');  
     // drawImgOnCanvas();
 }
 
@@ -20,13 +20,18 @@ function drawImgOnCanvas(img) {
     // ctx.drawImage(img);
 }
 
-function drawTextOnCanvas() {
+function drawTextOnCanvas(ev) {
+    let text = document.querySelector('.text').value;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if(text === '') pos.x = canvas.width / 2;
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
-    let text = document.querySelector('.text').value;
     ctx.font = '30px impact';
-    ctx.strokeText(text, 100, 100);
-    ctx.fillText(text, 100, 100);
-
+    ctx.strokeText(text, pos.x, 100);
+    ctx.fillText(text, pos.x, 100);
+    if(ev.code === 'Backspace' && text !== '') {
+        pos.x += 7;
+    } else {
+        pos.x -= 7;
+    }
 }
