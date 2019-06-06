@@ -11,8 +11,7 @@ function onInit() {
 }
 
 function onImg() {
-    let img = getImg();
-    console.log(img);
+    console.log(document.querySelector('.img'));
 }
 
 function imgOnCanvas() {

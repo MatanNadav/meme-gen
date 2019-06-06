@@ -1,8 +1,6 @@
 'use strict'
 
-
-
-function init() {
+function onInit() {
     var imgs = createImages();
    
     console.log(imgs);
