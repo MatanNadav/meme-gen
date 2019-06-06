@@ -12,7 +12,7 @@ function onInitMain() {
 function createImgContainer(size) {
     let grid = document.querySelector('.grid-container');
     for (let i = 0; i < size; i++) {
-        grid.innerHTML +=  `<div class = "box hvr-grow-shadow" onmousemove="onDisplayInfo(this)"></div>`
+        grid.innerHTML +=  `<div class = "box hvr-grow-shadow"></div>`
     }
 }
 
