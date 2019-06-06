@@ -18,12 +18,11 @@ function createImage(url, words) {
     let img = {
         id: gId++,
         keywords: words,
-        imgUrl: url,
-        imgSize: 
+        imgUrl: url
     }
     return img
 }
 
 function getImg() {
-    return gImg[0]
+    return gImgs[0];
 }
