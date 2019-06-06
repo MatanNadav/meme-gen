@@ -32,7 +32,6 @@ function onImgClick(imgId) {
     let imgObj = getImgById(imgId);
     saveImage('meme', imgObj);    
     onInitGenerator();
-    // onImgId(gIdImg);
 }
 
 function onDisplayInfo(elBox) {
