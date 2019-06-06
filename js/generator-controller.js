@@ -2,39 +2,46 @@
 
 let canvas;
 let ctx;
-let pos = { x: 0, y: 0 }
+let gPos = { x: 0, y: 0 }
+let gSrcImg;
 
 function onInitGenerator() {
     console.log('OK');
     canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');  
-    // drawImgOnCanvas();
+    ctx = canvas.getContext('2d');
+    drawImgOnCanvas();
 }
 
-function drawImgOnCanvas(id) {
-    
-    var img = getImgById(id);
-    console.log(img);
-    let test = img;
-    // console.log('Height: ',img.clientHeight,'Width:',img.clientWidth);
-    // canvas.width = elImg.clientWidth;
-    // canvas.height = elImg.clientHeight;
-    // ctx.drawImage(img);
+function onImgId(imgId) {
+    // let img = new Image();
+    // gSrcImg = getImgById(imgId);
+    // img.src = gSrcImg.imgUrl;
+    // img.onload = function () {
+    //     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    // }
+    // drawImgOnCanvas(imgId);
+}
 
+function drawImgOnCanvas(imgId) {
+    let img = new Image();
+    img.src = 'imgs/5.jpg';
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    }
 }
 
 function drawTextOnCanvas(ev) {
     let text = document.querySelector('.text').value;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if(text === '') pos.x = canvas.width / 2;
+    drawImgOnCanvas()
+    if (text === '') gPos.x = canvas.width / 2;
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
     ctx.font = '30px impact';
-    ctx.strokeText(text, pos.x, 100);
-    ctx.fillText(text, pos.x, 100);
-    if(ev.code === 'Backspace' && text !== '') {
-        pos.x += 7;
+    ctx.strokeText(text, gPos.x, 100);
+    ctx.fillText(text, gPos.x, 100);
+    if (ev.code === 'Backspace' && text !== '') {
+        gPos.x += 7;
     } else {
-        pos.x -= 7;
+        gPos.x -= 7;
     }
 }

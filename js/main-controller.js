@@ -1,5 +1,7 @@
 'use strict'
 
+let gIdImg;
+
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
@@ -26,10 +28,9 @@ function renderImage(imgs) {
     });
 }
 
-function onImgClick(id) {
-    
-    drawImgOnCanvas(id);
-
+function onImgClick(imgId) {
+    gIdImg = imgId
+    onImgId(gIdImg);
 }
 
 function onDisplayInfo(elBox) {

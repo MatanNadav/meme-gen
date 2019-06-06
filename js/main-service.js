@@ -27,9 +27,7 @@ function createImage(url, words) {
 }
 
 function getImgById(id) {
-    
     return gImgs.find( img => {
             return img.id === id;
         })
-    
 }
