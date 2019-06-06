@@ -5,6 +5,8 @@ function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
     renderImage(imgs)
+    console.log('database', imgs);
+    
 }
 
 function createImgContainer(size) {
@@ -29,14 +31,7 @@ function onSearchMeme(inputVal) {
     var searchedImgs = getSearchedMemes(inputVal);
     if(searchedImgs[0]) clearGrid()
     createImgContainer(searchedImgs.length)
-    renderImage(searchedImgs);
-    console.log(searchedImgs);
-    
-
-}
-
-function renderSearchedImgs(imgs) {
-
+    renderImage(searchedImgs);    
 }
 
 function clearGrid(img) {
@@ -50,9 +45,4 @@ function clearGrid(img) {
 function onImgClick(imgId) {
     let imgObj = getImgById(imgId);
     saveImage('meme', imgObj);
-}
-
-function onDisplayInfo(elBox) {
-   var elP =  elBox.querySelector('p');
-    
 }
