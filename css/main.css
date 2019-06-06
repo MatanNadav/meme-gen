@@ -1,5 +1,6 @@
 body {
     margin: 0; 
+    background-color: beige;
 }
 
 header {
@@ -83,7 +84,7 @@ header .header-wrapper {
 
 .grid-container {
     display: grid;
-    background-color: lightgray;
+    background-color: beige;
     grid-template-rows: repeat(5, 10em);
     grid-template-columns: repeat(5, 10em);
     grid-row-gap: 10px;
@@ -92,7 +93,7 @@ header .header-wrapper {
 }
 
 .box {
-    border: 1px solid white;
+    border: 1px solid firebrick;
     text-align: center;
     vertical-align: middle;
     justify-content: center;
@@ -105,4 +106,10 @@ header .header-wrapper {
     max-width: 100%;
     width: 100%;
     height: 100%;
+}
+
+.meme-info{
+    display: none;
+    opacity: 0.5;
+    background-color: darkred;
 }
