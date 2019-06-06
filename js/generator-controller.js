@@ -6,7 +6,7 @@ let gCtx;
 function onInit() {
     console.log('OK');
     gCanvas = document.getElementById('canvas');
-    gCtx = canvas.getContext('2d');
+    gCtx = gCanvas.getContext('2d');
     onImg();
 }
 
