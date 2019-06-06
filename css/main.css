@@ -20,7 +20,7 @@ header .header-wrapper {
     margin-left: 15px;
 }
 
-#canvas {
+.meme-canvas {
     border: solid 1px black;  
   }
 

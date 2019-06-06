@@ -3,12 +3,12 @@
 let canvas;
 let ctx;
 let gPos = { x: 0, y: 0 }
+console.log('got here');
 
-function onInitGenerator(imgId) {
-    let img = getImage('meme');
-    canvas = document.getElementById('canvas');
+function onInitGenerator() {
+    var img = getImage('meme');
+    canvas = document.querySelector('.meme-canvas')
     ctx = canvas.getContext('2d');
-    debugger
     drawImgOnCanvas(img);
 }
 
@@ -33,7 +33,6 @@ function drawImgOnCanvas(imgObj) {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     }
-    debugger;
 }
 
 function drawTextOnCanvas(ev) {
