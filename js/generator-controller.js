@@ -12,7 +12,7 @@ function onInitGenerator() {
     drawImgOnCanvas(img);
 }
 
-function onImgId(imgId) {
+function onImgId() {
     // let imgSrc = getImgById(imgId);
     // let gSrcImg = imgSrc.imgUrl;
     // console.log(gSrcImg);
