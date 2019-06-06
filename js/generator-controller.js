@@ -21,17 +21,18 @@ function drawImgOnCanvas() {
 
 function drawTextOnCanvas(ev) {
     let text = document.querySelector('.text').value;
+    // console.log(text);
     if (text === '') gPos.x = canvas.width / 2;
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
     ctx.font = '30px impact';
-    if (ev.code === 'Backspace' && text !== '') {
-        gPos.x += 7;
-        drawImgOnCanvas();
-    } else {
-        gPos.x -= 7;
-    }
     ctx.strokeText(text, gPos.x, 50);
     ctx.fillText(text, gPos.x, 50);
+    if (ev.code === 'Backspace' && text !== '') {
+        gPos.x += 7;
+    } else {
+        // drawImgOnCanvas();
+        gPos.x -= 7;
+    }
     // drawImgOnCanvas()
 }
