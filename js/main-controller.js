@@ -15,7 +15,7 @@ function createImgContainer(size) {
     }
 }
 function renderImage(imgs) {
-    var idx = 0;
+    let idx = 0;
     imgs.forEach(img => {
         var imgBox = document.querySelectorAll('.box');
         var keywords = img.keywords.join(',')
@@ -25,10 +25,11 @@ function renderImage(imgs) {
     });
 }
 
-function onImgClick(elImg) {
-    
-    drawImgOnCanvas(elImg);
-    window.location = 'generator.html';
+function onImgClick(id) {
+    let img = getImgById(id)
+    drawImgOnCanvas(img);
+    // console.log(img.imgUrl);
+    // window.location = 'generator.html';
     // console.log(img);
 
 }

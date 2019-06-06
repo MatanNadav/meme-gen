@@ -11,12 +11,13 @@ function onInitGenerator() {
     // drawImgOnCanvas();
 }
 
-function drawImgOnCanvas(elImg) {
-    console.log(elImg);
+function drawImgOnCanvas(img) {
+    console.log(img);
     // console.log('Height: ',img.clientHeight,'Width:',img.clientWidth);
-    // canvas.width = img.clientWidth;
-    // canvas.height = img.clientHeight;
-    // ctx.drawImage(img);
+    // canvas.width = elImg.clientWidth;
+    // canvas.height = elImg.clientHeight;
+    ctx.drawImage(img);
+
 }
 
 function drawTextOnCanvas(ev) {
