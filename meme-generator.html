@@ -9,7 +9,7 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
+<body onload="onInit()">
     <header>
         <section class="container header-wrapper flex">
             <nav id="mainMenu" class="main-menu-wrapper">
@@ -21,9 +21,10 @@
             </nav>
         </section>
     </header>
+    <div class="my-canvas flex justify-center"><canvas id="canvas" width="500" height="500"></canvas></div>
     <script src="js/util.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/service.js"></script>
+    <!-- <script src="js/controller.js"></script>
+    <script src="js/service.js"></script> -->
 </body>
 
 </html>
