@@ -7,7 +7,6 @@ function onInit() {
     console.log('OK');
     gCanvas = document.getElementById('canvas');
     gCtx = gCanvas.getContext('2d');
-    getImg();
 }
 
 function onImg() {
