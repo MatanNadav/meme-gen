@@ -37,6 +37,6 @@ function saveImage(key, imgObj) {
     saveToStorage(key, imgObj);
 }
 
-function getImage() {
-    loadFromStorage();
+function getImage(key) {
+    loadFromStorage(key);
 }
