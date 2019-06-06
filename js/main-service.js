@@ -33,8 +33,8 @@ function getImgById(id) {
 }
 
 
-function saveImage() {
-    saveToStorage();
+function saveImage(key, imgObj) {
+    saveToStorage(key, imgObj);
 }
 
 function getImage() {
