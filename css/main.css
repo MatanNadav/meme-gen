@@ -12,8 +12,12 @@ header .header-wrapper {
     height: 130px; 
 }
 
-.text {
+.footer-inputs {
     margin-left: 50%;
+}
+
+.text {
+    margin-left: 15px;
 }
 
 #canvas {
@@ -35,10 +39,14 @@ header .header-wrapper {
     border-right: 1px solid #1e1e1e; 
 }
 .main-menu a:first-child {
-    border-left: 1px solid #1e1e1e; }
+    border-left: 1px solid #1e1e1e; 
+}
+
 .main-menu a.active {
     border-bottom: 6px solid black;
-    color: black; }
+    color: black; 
+}
+
 .main-menu a:hover {
     color: black; 
 }
