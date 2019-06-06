@@ -4,6 +4,7 @@ body {
 
 header {
     background-color: darkslategray;
+    margin-bottom: 20px;
 }
 
 header .header-wrapper {

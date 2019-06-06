@@ -1,11 +1,10 @@
 'use strict'
 
-let gImgs;
-let gId = 1;
+var gImgs;
+var gId = 1;
 
 function createImages() {
-    
-    var imgs = [
+    let imgs = [
         createImage('../imgs/2.jpg', ['happy', 'nature']),
         createImage('../imgs/5.jpg', ['baby', 'success']),
         createImage('../imgs/8.jpg', ['condescending', 'wonka']),
@@ -22,7 +21,6 @@ function createImage(url, words) {
         keywords: words,
         imgUrl: url
     }
-
     return img
 }
 
