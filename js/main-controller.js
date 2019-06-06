@@ -1,6 +1,5 @@
 'use strict'
 
-// let gIdImg;
 
 function onInitMain() {
     let imgs = createImages();
@@ -21,11 +20,33 @@ function renderImage(imgs) {
     let idx = 0;
     imgs.forEach(img => {
         let imgBox = document.querySelectorAll('.box');
-        let keywords = img.keywords.join(',')
-        imgBox[idx].innerHTML = `<a href="generator.html" onclick="onImgClick(${img.id})"><p class="meme-info">${keywords}</p> <img class="images img-${img.id}" id="${img.id}" src="${img.imgUrl}" 
+        imgBox[idx].innerHTML = `<a href="generator.html" onclick="onImgClick(${img.id})"><img class="images img-${img.id}" id="${img.id}" src="${img.imgUrl}" 
         alt=""></a>`
         idx++;
     });
+}
+
+
+function onSearchMeme(inputVal) {
+    var searchedImgs = getSearchedMemes(inputVal);
+    if(searchedImgs[0]) clearGrid()
+    createImgContainer(searchedImgs.length)
+    renderImage(searchedImgs);
+    console.log(searchedImgs);
+    
+
+}
+
+function renderSearchedImgs(imgs) {
+
+}
+
+function clearGrid(img) {
+    let imgBox = document.querySelectorAll('.box');
+    imgBox.forEach(box => {
+        box.classList.remove('box')
+        box.style.display = 'none';
+    })
 }
 
 function onImgClick(imgId) {

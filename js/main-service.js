@@ -1,6 +1,7 @@
 'use strict'
 
 let gImgs;
+let gImagesToRemove = [];
 let gId = 1;
 
 function createImages() {
@@ -32,7 +33,18 @@ function getImgById(id) {
         })
 }
 
+function getSearchedMemes(searchStr) {
+    // debugger
 
+    return gImgs.filter(img => {
+        let keywordStr = img.keywords.join(',');
+        if((keywordStr.indexOf(searchStr)) > -1) {
+            return img
+        } else {
+
+        }
+    })
+}
 function saveImage(key, imgObj) {
     saveToStorage(key, imgObj);
 }
