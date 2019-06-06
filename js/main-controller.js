@@ -1,6 +1,6 @@
 'use strict'
 
-function onInit() {
+function onInitMain() {
     var imgs = createImages();
     renderImage(imgs)
     

@@ -3,15 +3,19 @@
 let gCanvas;
 let gCtx;
 
-function onInit() {
+function onInitGenerator() {
     console.log('OK');
     gCanvas = document.getElementById('canvas');
     gCtx = gCanvas.getContext('2d');
-    getImg();
+    drawImgOnCanvas();
 }
 
-function onImg() {
-    console.log(document.querySelector('.img'));
+function drawImgOnCanvas() {
+    let img = document.querySelector('.img');
+    console.log('Height: ',img.clientHeight,'Width:',img.clientWidth);
+    gCanvas.width = img.clientWidth;
+    gCanvas.height = img.clientHeight;
+    gCtx.drawImage(img);
 }
 
 function imgOnCanvas() {
