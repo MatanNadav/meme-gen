@@ -11,12 +11,14 @@ function onInitGenerator() {
     // drawImgOnCanvas();
 }
 
-function drawImgOnCanvas(img) {
+function drawImgOnCanvas(id) {
+    
+    var img = getImgById(id);
     console.log(img);
     // console.log('Height: ',img.clientHeight,'Width:',img.clientWidth);
     // canvas.width = elImg.clientWidth;
     // canvas.height = elImg.clientHeight;
-    ctx.drawImage(img);
+    // ctx.drawImage(img);
 
 }
 
