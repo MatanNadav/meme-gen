@@ -6,7 +6,6 @@ function onInitMain() {
     
    
     console.log(imgs);
-
 }
 
 function renderImage(imgs) {
