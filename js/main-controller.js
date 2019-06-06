@@ -2,12 +2,9 @@
 
 function onInit() {
     var imgs = createImages();
-<<<<<<< HEAD
     // renderImage(imgs)
-=======
     
    
->>>>>>> 2bd579a8e1a17c5661004c42f66978a80ff5b303
     console.log(imgs);
 
 }
