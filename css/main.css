@@ -10,6 +10,10 @@ header .header-wrapper {
     height: 130px; 
 }
 
+.text {
+    margin-left: 50%;
+}
+
 #canvas {
     border: solid 1px black;  
   }
