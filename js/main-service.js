@@ -28,7 +28,15 @@ function createImages() {
         createImage('imgs/meme3.jpg', ['oprah', 'you get', 'shout']),
         createImage('imgs/patrick.jpg', ['patrick', 'holding', 'laugh','cry']),
         createImage('imgs/putin.jpg', ['putin', 'two', 'strong','russia']),
-        createImage('imgs/meme4.jpg', ['top story', 'two', 'buzz','cowboy','stars','look'])
+        createImage('imgs/meme4.jpg', ['toy story', 'two', 'buzz','cowboy','stars','look']),
+        createImage('imgs/russian.jpg', ['russian', 'badass', 'sexy','beer']),
+        createImage('imgs/arm-wrestle.png', ['strong', 'muscle', 'black','white','arm wrestle']),
+        createImage('imgs/meme5.jpg', ['thinking', 'know best', 'black','use mind']),
+        createImage('imgs/grandma.jpg', ['grandma', 'cant see', 'glasses','backwords','understand']),
+        createImage('imgs/office.jpg', ['office', 'coffee', 'spandex']),
+        createImage('imgs/grylls.jpg', ['bear', 'grylls', 'improvise','adapt', 'overcome']),
+        createImage('imgs/ohno.jpg', ['stress', 'what to push', 'sweat','pressure', 'bomb']),
+        createImage('imgs/drake.jpg', ['yes', 'no', 'oh','feel good', 'dance']),
     ]
     gImgs = imgs;
     return imgs;
