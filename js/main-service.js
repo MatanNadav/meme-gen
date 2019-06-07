@@ -13,6 +13,22 @@ function createImages() {
         createImage('imgs/img11.jpg', ['laughing', 'satisfied']),
         createImage('imgs/img12.jpg', ['kissing', 'fighters']),
         createImage('imgs/img6.jpg', ['tired', 'dog']),
+        createImage('imgs/003.jpg', ['trump', 'orange', 'vain', 'angry']),
+        createImage('imgs/004.jpg', ['dog', 'cute', 'love', 'sweet']),
+        createImage('imgs/005.jpg', ['dog', 'baby','sleep', 'cute','smile','bed']),
+        createImage('imgs/006.jpg', ['cat', 'sleep', 'computer']),
+        createImage('imgs/12.jpg', ['blaming', 'finger']),
+        createImage('imgs/Ancient-Aliens.jpg', ['if', 'history', 'aliens', 'let me explain']),
+        createImage('imgs/drevil.jpg', ['evil', 'quotes', 'fake', 'powers']),
+        createImage('imgs/img2.jpg', ['africa', 'baby','dance','fun','naked']),
+        createImage('imgs/img5.jpg', ['baby', 'surprise', 'funny','cute']),
+        createImage('imgs/leo.jpg', ['leo dicaprio', 'salute', 'cheers','fancy']),
+        createImage('imgs/meme1.jpg', ['matrix', 'what if', 'serious']),
+        createImage('imgs/meme2.jpg', ['one does not', 'game thrones', 'sean','explain']),
+        createImage('imgs/meme3.jpg', ['oprah', 'you get', 'shout']),
+        createImage('imgs/patrick.jpg', ['patrick', 'holding', 'laugh','cry']),
+        createImage('imgs/putin.jpg', ['putin', 'two', 'strong','russia']),
+        createImage('imgs/meme4.jpg', ['top story', 'two', 'buzz','cowboy','stars','look'])
     ]
     gImgs = imgs;
     return imgs;
