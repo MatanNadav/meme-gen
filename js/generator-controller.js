@@ -14,7 +14,7 @@ function onInitGenerator() {
     ctx.font = '40px impact';
     drawImgOnCanvas();
     gPos.x = canvas.width / 2;
-    gPos.y = 50;
+    gPos.y = 100;
 }
 
 function drawImgOnCanvas() {
@@ -23,20 +23,17 @@ function drawImgOnCanvas() {
     gImg.onload = function () {
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
-    ctx.save();
 }
 
 function drawTextOnCanvas() {
     let text = document.querySelector('.text').value;
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-    ctx.restore();
     ctx.strokeText(text, gPos.x, gPos.y);
     ctx.fillText(text, gPos.x, gPos.y);
 }
 
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-    console.log(alignText);
     let text = document.querySelector('.text').value;
     ctx.textAlign = alignText;
     if (alignText === 'align-left') {
@@ -48,5 +45,25 @@ function textAlign(alignText) {
     }
     ctx.strokeText(text, gPos.x, gPos.y);
     ctx.fillText(text, gPos.x, gPos.y);
+}
 
+function fontSize(fontSize) {
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
+    let text = document.querySelector('.text').value;
+    if (fontSize === 'increese-font-size') {
+        ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) + 2) + 'px');
+    } else {
+        ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) - 2) + 'px');
+    }
+    ctx.strokeText(text, gPos.x, gPos.y);
+    ctx.fillText(text, gPos.x, gPos.y);
+}
+
+function changeColor(color) {
+    console.log(color);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = color;
+    let text = document.querySelector('.text').value;
+    ctx.strokeText(text, gPos.x, gPos.y);
+    ctx.fillText(text, gPos.x, gPos.y);
 }
