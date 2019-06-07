@@ -30,8 +30,16 @@ h1 {
     font-size: 2rem;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .footer-inputs {
-    margin-left: 50%;
+    margin-left: 40%;
+}
+
+.btns-box {
+    margin-top: 10px;
 }
 
 .text {
