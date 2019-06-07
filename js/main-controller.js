@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
@@ -27,13 +29,14 @@ function renderImage(imgs) {
 
 
 function onSearchMeme(inputVal) {
+    popularSearched(inputVal)
     var searchedImgs = getSearchedMemes(inputVal);
     if(searchedImgs[0]) clearGrid()
     createImgContainer(searchedImgs.length)
     renderImage(searchedImgs);    
 }
 
-function clearGrid(img) {
+function clearGrid() {
     let imgBox = document.querySelectorAll('.box');
     imgBox.forEach(box => {
         box.classList.remove('box')
@@ -43,5 +46,10 @@ function clearGrid(img) {
 
 function onImgClick(imgId) {
     let imgObj = getImgById(imgId);
-    saveImage('meme', imgObj);
+    saveValue('meme', imgObj);
+}
+
+function popularSearched(inputVal) {
+    if(!inputVal) return
+    setPopularSearches(inputVal)
 }

@@ -128,6 +128,13 @@ button:hover {
     margin: 2rem auto;
 }
 
+/* Popular searches */
+
+.grid-popular-search {
+    display: grid;
+    grid-template-rows: 1, 50%;
+    grid-template-columns: 1, 10%;
+}
 
 /* Grid HomePage */
 

@@ -3,6 +3,8 @@
 let gImgs;
 let gImagesToRemove = [];
 let gId = 1;
+let gPopularSearch = {};
+
 
 function createImages() {
     let imgs = [
@@ -67,10 +69,23 @@ function getSearchedMemes(searchStr) {
         }
     })
 }
-function saveImage(key, imgObj) {
-    saveToStorage(key, imgObj);
+
+function setPopularSearches(inputVal) {
+    let str = inputVal;
+    if(gPopularSearch[str]) {
+        gPopularSearch[str]++;
+    } else {
+        gPopularSearch[str] = 1;
+    }
+    saveValue('popularSearch', gPopularSearch)
+    console.log(gPopularSearch);
+    
 }
 
-function getImage(key) {
+function saveValue(key, value) {
+    saveToStorage(key, value);
+}
+
+function getValue(key) {
    return loadFromStorage(key);
 }
