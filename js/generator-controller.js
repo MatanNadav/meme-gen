@@ -9,8 +9,10 @@ function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
     ctx = canvas.getContext('2d');
     ctx.textAlign = 'center'
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.font = '40px impact';
     drawImgOnCanvas();
-    
     gPos.x = canvas.width / 2;
     gPos.y = 50;
 }
@@ -21,29 +23,30 @@ function drawImgOnCanvas() {
     gImg.onload = function () {
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
+    ctx.save();
 }
 
 function drawTextOnCanvas() {
     let text = document.querySelector('.text').value;
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-    console.log(text.length);
-    // if(gPos.x <= 61) {
-    //     text = '';
-    //     gPos.y += 50;
-    //     gPos.x = canvas.width / 2;
-    // }
-    ctx.fillStyle = 'white';
-    ctx.strokeStyle = 'black';
-    ctx.font = '30px impact';
+    ctx.restore();
     ctx.strokeText(text, gPos.x, gPos.y);
     ctx.fillText(text, gPos.x, gPos.y);
-    // let align = textAlign();
-    // ctx.textAlign = 'center';
 }
 
-function textAlign(align) {
-    console.log(align);
-    ctx.textAlign = 'left';
-    // ctx.strokeText(text, gPos.x, gPos.y);
-    // ctx.fillText(text, gPos.x, gPos.y);
+function textAlign(alignText) {
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
+    console.log(alignText);
+    let text = document.querySelector('.text').value;
+    ctx.textAlign = alignText;
+    if (alignText === 'align-left') {
+        gPos.x = 100;
+    } else if (alignText === 'align-center') {
+        gPos.x = canvas.width / 2;
+    } else {
+        gPos.x = canvas.width - 40;
+    }
+    ctx.strokeText(text, gPos.x, gPos.y);
+    ctx.fillText(text, gPos.x, gPos.y);
+
 }
