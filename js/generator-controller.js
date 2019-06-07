@@ -18,7 +18,7 @@ function onInitGenerator() {
 }
 
 function drawImgOnCanvas() {
-    let imgFromStorage = getImage('meme');
+    let imgFromStorage = getValue('meme');
     gImg.src = imgFromStorage.imgUrl;
     gImg.onload = function () {
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
