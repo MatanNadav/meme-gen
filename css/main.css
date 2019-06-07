@@ -12,12 +12,18 @@ header .header-wrapper {
     height: 130px; 
 }
 
+h1 {
+    color: white;
+    font-size: 2rem;
+}
+
 .footer-inputs {
     margin-left: 50%;
 }
 
 .text {
     margin-left: 15px;
+    z-index: 3;
 }
 
 .meme-canvas {
@@ -26,6 +32,7 @@ header .header-wrapper {
 
 .my-canvas {
     margin: 20px;
+    z-index: 1;
 }
 
 .main-menu a {
@@ -138,8 +145,6 @@ header .header-wrapper {
     height: 100%;
 }
 
-
-
 /* Grow Shadow */
 .hvr-grow-shadow {
   display: inline-block;
@@ -149,6 +154,7 @@ header .header-wrapper {
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
 }
+
 .hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
   box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
@@ -163,6 +169,7 @@ header .header-wrapper {
   transition-duration: 0.3s;
   transition-property: box-shadow;
 }
+
 .hvr-box-shadow-outset:hover, .hvr-box-shadow-outset:focus, .hvr-box-shadow-outset:active {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
@@ -178,6 +185,7 @@ header .header-wrapper {
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */
 }
+
 .hvr-box-shadow-inset:hover, .hvr-box-shadow-inset:focus, .hvr-box-shadow-inset:active {
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
   /* Hack to improve aliasing on mobile/tablet devices */

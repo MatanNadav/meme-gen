@@ -3,6 +3,7 @@
 let canvas;
 let ctx;
 let gPos = { x: 0, y: 0 }
+let gImg = new Image();
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
@@ -12,16 +13,15 @@ function onInitGenerator() {
 
 function drawImgOnCanvas() {
     let imgFromStorage = getImage('meme');
-    let img = new Image();
-    img.src = imgFromStorage.imgUrl;
-    img.onload = function () {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    gImg.src = imgFromStorage.imgUrl;
+    gImg.onload = function () {
+        ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
 }
 
 function drawTextOnCanvas(ev) {
     let text = document.querySelector('.text').value;
-    // console.log(text);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     if (text === '') gPos.x = canvas.width / 2;
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'black';
@@ -31,8 +31,6 @@ function drawTextOnCanvas(ev) {
     if (ev.code === 'Backspace' && text !== '') {
         gPos.x += 7;
     } else {
-        // drawImgOnCanvas();
         gPos.x -= 7;
     }
-    // drawImgOnCanvas()
 }

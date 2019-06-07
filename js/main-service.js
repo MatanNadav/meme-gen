@@ -34,7 +34,6 @@ function getImgById(id) {
 }
 
 function getSearchedMemes(searchStr) {
-
     return gImgs.filter(img => {
         let keywordStr = img.keywords.join(',');
         if((keywordStr.indexOf(searchStr)) > -1) {
