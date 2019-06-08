@@ -17,19 +17,19 @@ function drawImgOnCanvas() {
     gImg.onload = function () {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
-        ctx.textAlign = 'center'
         ctx.fillStyle = 'white';
         ctx.strokeStyle = 'black';
+        ctx.textAlign = 'center';
         ctx.font = '40px impact';
-        gPos.x = canvas.width / 2;
+        gPos.x = gImg.naturalWidth / 2;
         gPos.y = 100;
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
 }
 
 function drawTextOnCanvas() {
-    let text = document.querySelector('.text').value;
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    let text = document.querySelector('.text').value;
     ctx.strokeText(text, gPos.x, gPos.y);
     ctx.fillText(text, gPos.x, gPos.y);
 }
@@ -37,14 +37,14 @@ function drawTextOnCanvas() {
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
     let text = document.querySelector('.text').value;
-    ctx.textAlign = alignText;
-    if (alignText === 'align-left') {
+    if (alignText === 'left') {
         gPos.x = 10;
-    } else if (alignText === 'align-center') {
+    } else if (alignText === 'center') {
         gPos.x = gImg.naturalWidth / 2;
     } else {
         gPos.x = gImg.naturalWidth - 40;
     }
+    ctx.textAlign = alignText;
     ctx.strokeText(text, gPos.x, gPos.y);
     ctx.fillText(text, gPos.x, gPos.y);
 }
