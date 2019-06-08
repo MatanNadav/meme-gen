@@ -34,8 +34,10 @@ function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
         lineOneObj.text = document.querySelector('.text-one').value;
         lineTwoObj.text = document.querySelector('.text-two').value;
+        // ctx.save();
         drawOneLineTextInCanvasWidth();
         drawTwoLineTextInCanvasWidth(); 
+        // ctx.restore();
     // let lines = splitTextToLines(textObj.text);
     // drawOneLineTextInCanvas(lines[0],textObj.x,textObj.y);
 }
@@ -115,6 +117,12 @@ function drawTwoLineTextInCanvasWidth() {
         } while (ctx.measureText(newText).width > canvas.width)
         drawText(newText, lineTwoObj.x, lineTwoObj.y);
     }
+}
+
+function downloadCanvas(elLink) {
+    const data = canvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'my-img.jpg';
 }
 
 // function splitTextToLines(originalText) {
