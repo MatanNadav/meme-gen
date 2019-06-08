@@ -72,11 +72,12 @@ function getSearchedMemes(searchStr) {
 function setPopularSearches(inputVal) {
     let str = inputVal;
     gPopularSearch = getValue('popularSearch')
-    if (gPopularSearch[str]) {
-        gPopularSearch[str]++;
-    } else {
-        gPopularSearch[str] = 1;
+    if(!gPopularSearch) {
+        gPopularSearch = {};
     }
+
+    gPopularSearch[str] ? gPopularSearch[str]++ : gPopularSearch[str] = 1;
+    
     saveValue('popularSearch', gPopularSearch)
     console.log(gPopularSearch);
 }
