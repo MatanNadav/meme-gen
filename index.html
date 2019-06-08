@@ -19,12 +19,20 @@
         </section>
     </header>
 
-    <section class="grid-popular-search">
-       <p class="popular-search"></p>
+    <section class="popular-container flex justify-center">
     </section>
 
     <section class="search-container flex align-center justify-center">
-        <input type="search" placeholder="Search memes" onchange="onSearchMeme(this.value)">
+        <input type="text" list="popular-options" placeholder="Search memes" onchange="onSearchMeme(this.value)">
+
+        <datalist id="popular-options">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+            </datalist>
     </section>
     
 
@@ -37,9 +45,9 @@
       <div class="footer-container">
           <p>Share us</p>
           <ul class="share-buttons">
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook" target="_blank"> <img alt="Share on Facebook" src="/social img/Facebook.png" /></a></li>
-            <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img alt="Tweet" src="/social img/Twitter.png" /></a></li>
-            <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" title="Pin it"><img alt="Pin it" src="/social img/Pinterest.png" /></a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook" target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
+            <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img alt="Tweet" src="social img/Twitter.png" /></a></li>
+            <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" title="Pin it"><img alt="Pin it" src="social img/Pinterest.png" /></a></li>
           </ul>
       </div>
     </section>

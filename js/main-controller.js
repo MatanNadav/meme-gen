@@ -5,15 +5,16 @@
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
-    renderImage(imgs)
+    renderImage(imgs);
+    renderPopularSearch();
     console.log('database', imgs);
-    
+
 }
 
 function createImgContainer(size) {
     let grid = document.querySelector('.grid-container');
     for (let i = 0; i < size; i++) {
-        grid.innerHTML +=  `<div class = "box hvr-grow-shadow"></div>`
+        grid.innerHTML += `<div class = "box hvr-grow-shadow"></div>`
     }
 }
 
@@ -27,13 +28,55 @@ function renderImage(imgs) {
     });
 }
 
+function renderPopularSearch() {
+    let strSearches = '';
+    let searches = getPopularSearchesArray()
+    let idx = 0;
+    let searchOptions = document.querySelectorAll('.search-option')
+    while (idx < 6) {
+        if (!searches[idx]) break;
+        switch (idx) {
+            case 0:
+                strSearches += `<h1 class="popular popular-h1" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h1>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+            case 1:
+                strSearches += `<h2 class="popular popular-h2" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h2>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+            case 2:
+                strSearches += `<h3 class="popular popular-h3" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h3>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+            case 3:
+                strSearches += `<h4 class="popular popular-h4" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h4>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+            case 4:
+                strSearches += `<h5 class="popular popular-h5" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h5>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+            case 5:
+                strSearches += `<h6 class="popular popular-h6" style="color: firebrick" onclick="onSearchMeme(this.innerText)">${searches[idx][0]}</h6>`
+                searchOptions[idx].value = searches[idx][0];
+                break;
+        }
+        idx++;
+    }
+    let popularContainer = document.querySelector('.popular-container');
+    popularContainer.innerHTML = strSearches;
+}
+
 
 function onSearchMeme(inputVal) {
-    popularSearched(inputVal)
+    console.log('here');
+    
     var searchedImgs = getSearchedMemes(inputVal);
-    if(searchedImgs[0]) clearGrid()
+    if (searchedImgs[0]) clearGrid()
     createImgContainer(searchedImgs.length)
-    renderImage(searchedImgs);    
+    renderImage(searchedImgs);
+    popularSearched(inputVal);
+    renderPopularSearch();
 }
 
 function clearGrid() {
@@ -50,6 +93,6 @@ function onImgClick(imgId) {
 }
 
 function popularSearched(inputVal) {
-    if(!inputVal) return
+    if (!inputVal) return
     setPopularSearches(inputVal)
 }
