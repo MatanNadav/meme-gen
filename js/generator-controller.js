@@ -2,10 +2,9 @@
 
 let canvas;
 let ctx;
-let gPos = { x: 0, y: 0 };
 let gImg = new Image();
-let oneTextObj = { text: '', x: 0, y: 0 };
-let twoTextObj = { text: '', x: 0, y: 0 };
+let lineOneObj = { text: '', x: 0, y: 0 };
+let lineTwoObj = { text: '', x: 0, y: 0 };
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
@@ -23,19 +22,20 @@ function drawImgOnCanvas() {
         ctx.strokeStyle = 'black';
         ctx.textAlign = 'center';
         ctx.font = '60px impact';
-        gPos.x = gImg.naturalWidth / 2;
-        gPos.y = 100;
+        lineOneObj.x = gImg.naturalWidth / 2;
+        lineOneObj.y = 100;
+        lineTwoObj.x = gImg.naturalWidth / 2;
+        lineTwoObj.y = gImg.naturalHeight - 100; 
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
 }
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    console.log(ctx.font);
-    oneTextObj.text = document.querySelector('.text').value;
-    oneTextObj.x = gPos.x;
-    oneTextObj.y = gPos.y;
-    drawOneLineTextInCanvasWidth();
+        lineOneObj.text = document.querySelector('.text-one').value;
+        lineTwoObj.text = document.querySelector('.text-two').value;
+        drawOneLineTextInCanvasWidth();
+        drawTwoLineTextInCanvasWidth(); 
     // let lines = splitTextToLines(textObj.text);
     // drawOneLineTextInCanvas(lines[0],textObj.x,textObj.y);
 }
@@ -44,56 +44,77 @@ function changeFont(font) {
     ctx.font = '60px ' + font;
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
     drawOneLineTextInCanvasWidth();
+    drawTwoLineTextInCanvasWidth();
 }
 
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    let text = document.querySelector('.text').value;
+    lineOneObj.text = document.querySelector('.text-one').value;
+    lineTwoObj.text = document.querySelector('.text-two').value;
     if (alignText === 'left') {
-        gPos.x = 10;
+            lineOneObj.x = 10;
+            lineTwoObj.x = 10;
     } else if (alignText === 'center') {
-        gPos.x = gImg.naturalWidth / 2;
+        lineOneObj.x = gImg.naturalWidth / 2;
+        lineTwoObj.x = gImg.naturalWidth / 2;
     } else {
-        gPos.x = gImg.naturalWidth - 40;
+        lineOneObj.x = gImg.naturalWidth - 40 ;
+        lineTwoObj.x = gImg.naturalWidth - 40;
     }
     ctx.textAlign = alignText;
-    drawText(text, gPos.x, gPos.y);
+    drawText(lineOneObj.text, lineOneObj.x, lineOneObj.y);
+    drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
 }
 
 function fontSize(fontSize) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    let text = document.querySelector('.text').value;
     if (fontSize === 'increese-font-size') {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) + 2) + 'px');
     } else {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) - 2) + 'px');
     }
     drawOneLineTextInCanvasWidth();
+    drawTwoLineTextInCanvasWidth();
 }
 
 function changeColor(color) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
     ctx.fillStyle = color;
-    let text = document.querySelector('.text').value;
-    drawText(text, gPos.x, gPos.y);
+    lineOneObj.text = document.querySelector('.text-one').value;
+    lineTwoObj.text = document.querySelector('.text-two').value;
+    drawText(lineOneObj.text, lineOneObj.x, lineOneObj.y);
+    drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
 }
 
 function drawOneLineTextInCanvasWidth() {
-    let textWidth = ctx.measureText(oneTextObj.text).width;
+    let textWidth = ctx.measureText(lineOneObj.text).width;
     if (textWidth <= canvas.width) {
-        drawText(oneTextObj.text, oneTextObj.x, oneTextObj.y);
+        drawText(lineOneObj.text, lineOneObj .x, lineOneObj.y);
     } else {
-        let newText = oneTextObj.text;
+        let newText =  lineOneObj.text;  
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
-        drawText(newText, oneTextObj.x, oneTextObj.y);
+        drawText(newText, lineOneObj.x, lineOneObj.y);
     }
 }
-
+ 
 function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
+}
+
+function drawTwoLineTextInCanvasWidth() {
+    let textWidth = ctx.measureText(lineTwoObj.text).width;
+    if (textWidth <= canvas.width) {
+        drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
+    } else {
+        let newText = lineTwoObj.text;
+        do {
+            newText = newText.slice(0, -1);
+        } while (ctx.measureText(newText).width > canvas.width)
+        drawText(newText, lineTwoObj.x, lineTwoObj.y);
+    }
 }
 
 // function splitTextToLines(originalText) {
@@ -110,7 +131,3 @@ function drawText(text, posX, posY) {
 // }
 // return lines;
 // }
-
-function addTextLine() {
-
-}
