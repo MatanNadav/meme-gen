@@ -25,7 +25,7 @@ function drawImgOnCanvas() {
         lineOneObj.x = gImg.naturalWidth / 2;
         lineOneObj.y = 100;
         lineTwoObj.x = gImg.naturalWidth / 2;
-        lineTwoObj.y = gImg.naturalHeight - 100; 
+        lineTwoObj.y = gImg.naturalHeight - 25; 
         ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
 }
