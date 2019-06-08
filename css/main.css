@@ -132,7 +132,8 @@ button:hover {
 
 
 .popular {
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
 }
 
 .popular:hover {

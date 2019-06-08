@@ -23,7 +23,16 @@
     </section>
 
     <section class="search-container flex align-center justify-center">
-        <input type="search" placeholder="Search memes" onchange="onSearchMeme(this.value)">
+        <input type="text" list="popular-options" placeholder="Search memes" onchange="onSearchMeme(this.value)">
+
+        <datalist id="popular-options">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+                <option class="search-option" value="">
+            </datalist>
     </section>
     
 
