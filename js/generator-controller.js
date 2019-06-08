@@ -33,7 +33,9 @@ function drawTextOnCanvas() {
     textObj.text = document.querySelector('.text').value;
     textObj.x = gPos.x;
     textObj.y = gPos.y;
-    drawOneLineTextInCanvasWithBorderCheck();
+    drawOneLineTextInCanvasWidth();
+    // let lines = splitTextToLines(textObj.text);
+    // drawOneLineTextInCanvas(lines[0],textObj.x,textObj.y);
 }
 
 function textAlign(alignText) {
@@ -47,8 +49,7 @@ function textAlign(alignText) {
         gPos.x = gImg.naturalWidth - 40;
     }
     ctx.textAlign = alignText;
-    ctx.strokeText(text, gPos.x, gPos.y);
-    ctx.fillText(text, gPos.x, gPos.y);
+    drawText(text, gPos.x, gPos.y);
 }
 
 function fontSize(fontSize) {
@@ -59,32 +60,45 @@ function fontSize(fontSize) {
     } else {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) - 2) + 'px');
     }
-    ctx.strokeText(text, gPos.x, gPos.y);
-    ctx.fillText(text, gPos.x, gPos.y);
+    drawOneLineTextInCanvasWidth();
 }
 
 function changeColor(color) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
     ctx.fillStyle = color;
     let text = document.querySelector('.text').value;
-    ctx.strokeText(text, gPos.x, gPos.y);
-    ctx.fillText(text, gPos.x, gPos.y);
+    drawText(text, gPos.x, gPos.y);
 }
 
-function drawOneLineTextInCanvasWithBorderCheck() {
+function drawOneLineTextInCanvasWidth() {
     let textWidth = ctx.measureText(textObj.text).width;
     if (textWidth <= canvas.width) {
-        drawOneLineTextInCanvas(textObj.text, textObj.x, textObj.y);
+        drawText(textObj.text, textObj.x, textObj.y);
     } else {
         let newText = textObj.text;
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
-        drawOneLineTextInCanvas(newText, textObj.x, textObj.y);
+        drawText(newText, textObj.x, textObj.y);
     }
 }
 
-function drawOneLineTextInCanvas(text, posX, posY) {
+function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
 }
+
+// function splitTextToLines(originalText) {
+    // let lines = [];
+    // let textWidth = ctx.measureText(textObj.text).width;
+    // if (textWidth <= canvas.width || originalText.length === 0) {
+    //     lines.push(originalText);
+    // } else {
+    //     let newText = originalText;
+    //     do {
+    //         newText = newText.slice(0, -1);
+    //     } while (ctx.measureText(newText).width > canvas.width)
+
+    // }
+    // return lines;
+// }
