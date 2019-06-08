@@ -14,6 +14,8 @@ body {
     background-color: beige;
 }
 
+
+
 /* Header  */
 
 header {
@@ -35,8 +37,9 @@ header {
     font-weight: bold;
     padding: 10px;
 }
+
   
-  .add-meme:hover {
+.add-meme:hover {
     background: firebrick;
 }
 
@@ -277,3 +280,4 @@ ul.share-buttons{
     overflow: hidden;
 }
 
+/* Modal  */

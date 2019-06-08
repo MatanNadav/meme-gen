@@ -84,6 +84,13 @@ function onSearchMeme(inputVal) {
     renderPopularSearch();
 }
 
+function operateModal() {
+    $('.modal').show();
+    $('.close, .btn-secondary').click(function () {
+        $('.modal').hide();
+    }) 
+}
+
 function clearGrid() {
     let imgBox = document.querySelectorAll('.box');
     imgBox.forEach(box => {

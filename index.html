@@ -11,22 +11,23 @@
 </head>
 
 <body onload="onInitMain()">
-    <header>
-        <section class="container header-wrapper flex align-center">
-            <nav id="mainMenu" class="main-menu-wrapper">
-                <h1>Welcome to meme generator</h1>
-                <button class="add-meme" onclick="addMeme()">Add meme</button>
-            </nav>
+    <section class="page-container">
+        <header>
+            <section class="container header-wrapper flex align-center">
+                <nav id="mainMenu" class="main-menu-wrapper">
+                    <h1>Welcome to meme generator</h1>
+                    <!-- <button class="add-meme" onclick="operateModal()">Add meme</button> -->
+                </nav>
+            </section>
+        </header>
+
+        <section class="popular-container flex justify-center">
         </section>
-    </header>
 
-    <section class="popular-container flex justify-center">
-    </section>
+        <section class="search-container flex align-center justify-center">
+            <input type="text" list="popular-options" placeholder="Search memes" onchange="onSearchMeme(this.value)">
 
-    <section class="search-container flex align-center justify-center">
-        <input type="text" list="popular-options" placeholder="Search memes" onchange="onSearchMeme(this.value)">
-
-        <datalist id="popular-options">
+            <datalist id="popular-options">
                 <option class="search-option" value="">
                 <option class="search-option" value="">
                 <option class="search-option" value="">
@@ -34,25 +35,54 @@
                 <option class="search-option" value="">
                 <option class="search-option" value="">
             </datalist>
+        </section>
+
+        <section class="modal-add-meme">
+            <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Meme</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="addMeme()">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid-container imgs">
+
+        </section>
+
+
+
+        <a href="https"></a>
+        <section class="footer">
+            <div class="footer-container">
+                <p>Share us</p>
+                <ul class="share-buttons">
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook"
+                            target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
+                    <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img
+                                alt="Tweet" src="social img/Twitter.png" /></a></li>
+                    <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank"
+                            title="Pin it"><img alt="Pin it" src="social img/Pinterest.png" /></a></li>
+                </ul>
+            </div>
+        </section>
     </section>
-    
 
-    <section class="grid-container imgs">
 
-    </section>
-
- <a href="https"></a>
-    <section class="footer">
-      <div class="footer-container">
-          <p>Share us</p>
-          <ul class="share-buttons">
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook" target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
-            <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img alt="Tweet" src="social img/Twitter.png" /></a></li>
-            <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" title="Pin it"><img alt="Pin it" src="social img/Pinterest.png" /></a></li>
-          </ul>
-      </div>
-    </section>
-
+    <script src="lib/jquery/jquery.js"></script>
     <script src="js/util.js"></script>
     <script src="js/generator-service.js"></script>
     <script src="js/main-service.js"></script>
