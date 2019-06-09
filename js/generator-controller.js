@@ -28,12 +28,11 @@ function drawImgOnCanvas() {
 
 function resetImgSettings() {
     ctx.fillStyle = 'white';
-        console.log('color style',ctx.fillStyle)
         ctx.strokeStyle = 'black';
         ctx.textAlign = 'center';
         ctx.font = '60px impact';
         lineOneObj.x = gImg.naturalWidth / 2;
-        lineOneObj.y = 100;
+        lineOneObj.y = 70;
         lineTwoObj.x = gImg.naturalWidth / 2;
         lineTwoObj.y = gImg.naturalHeight - 25; 
 }
@@ -46,8 +45,6 @@ function drawTextOnCanvas() {
         drawOneLineTextInCanvasWidth();
         drawTwoLineTextInCanvasWidth(); 
         // ctx.restore();
-    // let lines = splitTextToLines(textObj.text);
-    // drawOneLineTextInCanvas(lines[0],textObj.x,textObj.y);
 }
 
 function changeFont(font) {
