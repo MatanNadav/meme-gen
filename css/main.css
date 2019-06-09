@@ -24,6 +24,11 @@ body {
     background-color: beige;
 }
 
+body.rtl {
+    direction: rtl;
+}
+
+
 
 
 /* Header  */
@@ -51,6 +56,12 @@ header {
   
 .add-meme:hover {
     background: firebrick;
+}
+
+.about-meme {
+    color: black;
+    display: block;
+    padding: 10px;
 }
 
 header .header-wrapper {

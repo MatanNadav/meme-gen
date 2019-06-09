@@ -54,6 +54,7 @@ function createImages() {
             createImage('imgs/piece.jpg', ['boyfriend', 'girlfriend', 'looking', 'ass', 'creepy']),
             createImage('imgs/money.jpg', ['shut up', 'take', 'money']),
             createImage('imgs/eternal.jpg', ['creepy', 'oldschool', 'geek', 'noob', 'braces']),
+            createImage('imgs/anime-meme.jpg', ['suspicious', 'futurama', 'stupid', 'anime']),
         ]
     }
     gImgs = imgs;

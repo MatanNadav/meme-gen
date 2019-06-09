@@ -16,9 +16,15 @@
             <nav id="mainMenu" class="main-menu-wrapper">
                 <ul class="main-menu clean-list flex">
                     <li>
-                        <a href="index.html">Home Page</a>
+                        <a href="index.html" data-trans="generator-home-link">Home Page</a>
                     </li>
                 </ul>
+                <li>
+                    <select class="generator-lang-change" onchange="onSetLang(this.value)">
+                        <option value="en">English</option>
+                        <option value="he">עברית</option>
+                    </select>
+                </li>
             </nav>
         </section>
     </header>
@@ -28,7 +34,8 @@
     <div class="group-one-btns flex">
         <section class="footer-inputs flex justify-center align-center">
             <!-- <button class="add-btn" onclick="addTextLine()">Next line</button> -->
-            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text" autofocus>
+            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)"
+                data-trans="generator-text-placeholder" placeholder="Enter Text" autofocus>
         </section>
         <section class="btns-box flex justify-center align-center">
             <select onchange="changeFont(this.value)" class="font curser-pointer">
@@ -43,14 +50,15 @@
             <button class="increese-font-size" onclick="fontSize(this.className)"><i class="fas fa-plus"></i></button>
             <button class="decreese-font-size" onclick="fontSize(this.className)"><i class="fas fa-minus"></i></button>
             <input type="color" value="#ffffff" class="change-color curser-pointer" onchange="changeColor(this.value)">
-            <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
+            <a href="#" onclick="downloadCanvas(this)" data-trans="generator-download-link" download="">Download</a>
         </section>
     </div>
 
     <div class="group-two-btns flex">
         <section class="footer-inputs flex justify-center align-center">
             <!-- <button class="add-btn" onclick="addTextLine()">Next line</button> -->
-            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text" autofocus>
+            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
+                data-trans="generator-text-placeholder" placeholder="Enter Text" autofocus>
         </section>
 
     </div>
@@ -58,7 +66,7 @@
     <a href="https"></a>
     <section class="footer">
         <div class="footer-container">
-            <p>Share us</p>
+            <p data-trans="generator-footer-share">Share us</p>
             <ul class="share-buttons">
                 <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook"
                         target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
@@ -69,9 +77,11 @@
             </ul>
         </div>
     </section>
-</section>
+    </section>
 
+    <script src="lib/jquery/jquery.js"></script>
     <script src="js/util.js"></script>
+    <script src="js/i18service.js"></script>
     <script src="js/generator-service.js"></script>
     <script src="js/main-service.js"></script>
     <script src="js/main-controller.js"></script>

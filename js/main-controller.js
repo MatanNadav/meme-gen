@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 function onInitMain() {
     let imgs = createImages();
     createImgContainer(imgs.length)
@@ -74,7 +72,6 @@ function renderPopularSearch() {
 
 
 function onSearchMeme(inputVal) {
-    console.log('here');
 
     var searchedImgs = getSearchedMemes(inputVal);
     if (searchedImgs[0]) clearGrid()
@@ -88,7 +85,7 @@ function operateModal() {
     $('.modal').show();
     $('.close, .btn-secondary').click(function () {
         $('.modal').hide();
-    }) 
+    })
 }
 
 function clearGrid() {
@@ -107,4 +104,18 @@ function onImgClick(imgId) {
 function popularSearched(inputVal) {
     if (!inputVal) return
     setPopularSearches(inputVal)
+}
+
+function onSetLang(lang) {
+
+    setLang(lang);
+
+    if (lang === 'he') document.body.classList.add('rtl');
+    else document.body.classList.remove('rtl');
+
+    doTrans();
+
+
+
+
 }

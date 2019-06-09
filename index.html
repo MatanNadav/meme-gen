@@ -15,17 +15,26 @@
         <header>
             <section class="container header-wrapper flex align-center">
                 <nav id="mainMenu" class="main-menu-wrapper">
-                    <h1>Welcome to meme generator</h1>
+                    <h1 data-trans="welcome-h1">Welcome to meme generator</h1>
                     <!-- <button class="add-meme" onclick="operateModal()">Add meme</button> -->
+                    <a href="https://en.wikipedia.org/wiki/Meme" data-trans="wiki-link" class="about-meme"
+                        target="_blank">Find out more about memes</a>
+                    <select class="lang-change" onchange="onSetLang(this.value)">
+                        <option value="en">English</option>
+                        <option value="he">עברית</option>
+                    </select>
                 </nav>
+
             </section>
+
         </header>
 
         <section class="popular-container flex justify-center">
         </section>
 
         <section class="search-container flex align-center justify-center">
-            <input type="text" list="popular-options" placeholder="Search memes" onchange="onSearchMeme(this.value)">
+            <input type="text" list="popular-options" data-trans="search-placeholder" placeholder="Search memes"
+                onchange="onSearchMeme(this.value)">
 
             <datalist id="popular-options">
                 <option class="search-option" value="">
@@ -37,7 +46,7 @@
             </datalist>
         </section>
 
-        <section class="modal-add-meme">
+        <!-- <section class="modal-add-meme">
             <div class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -57,7 +66,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section class="grid-container imgs">
 
@@ -65,10 +74,9 @@
 
 
 
-        <a href="https"></a>
         <section class="footer">
             <div class="footer-container">
-                <p>Share us</p>
+                <p data-trans="footer-share">Share us</p>
                 <ul class="share-buttons">
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook"
                             target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
@@ -84,6 +92,7 @@
 
     <script src="lib/jquery/jquery.js"></script>
     <script src="js/util.js"></script>
+    <script src="js/i18service.js"></script>
     <script src="js/generator-service.js"></script>
     <script src="js/main-service.js"></script>
     <script src="js/main-controller.js"></script>
