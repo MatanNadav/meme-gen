@@ -139,3 +139,31 @@ function downloadCanvas(elLink) {
 // }
 // return lines;
 // }
+
+function onFileInputChange(ev) {
+    handleImageFromInput(ev, renderCanvas)
+}
+
+function renderCanvas(img) {
+    // gImg.src = img;
+    // console.log('img:',img);
+    // console.log('img.src:',img.src);
+    // console.log('gImg.src:',gImg.src);
+    // drawImgOnCanvas();
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+}
+
+//UPLOAD IMG WITH INPUT FILE
+function handleImageFromInput(ev, onImageReady) {
+    document.querySelector('.share-container').innerHTML = ''
+    var reader = new FileReader();
+
+    reader.onload = function (event) {
+        var img = new Image();
+        img.onload = onImageReady.bind(null, img)
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(ev.target.files[0]);
+}
