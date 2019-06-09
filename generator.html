@@ -29,13 +29,12 @@
         </section>
     </header>
     <div class="my-canvas flex justify-center">
+        <input type="file" name="image" onchange="onFileInputChange(event)" />
         <canvas class="meme-canvas" width="50" height="50"></canvas>
     </div>
     <div class="group-one-btns flex">
         <section class="footer-inputs flex justify-center align-center">
-            <!-- <button class="add-btn" onclick="addTextLine()">Next line</button> -->
-            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)"
-                data-trans="generator-text-placeholder" placeholder="Enter Text" autofocus>
+            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text" autofocus>
         </section>
         <section class="btns-box flex justify-center align-center">
             <select onchange="changeFont(this.value)" class="font curser-pointer">
@@ -50,19 +49,14 @@
             <button class="increese-font-size" onclick="fontSize(this.className)"><i class="fas fa-plus"></i></button>
             <button class="decreese-font-size" onclick="fontSize(this.className)"><i class="fas fa-minus"></i></button>
             <input type="color" value="#ffffff" class="change-color curser-pointer" onchange="changeColor(this.value)">
-            <a href="#" onclick="downloadCanvas(this)" data-trans="generator-download-link" download="">Download</a>
+            <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
         </section>
     </div>
-
     <div class="group-two-btns flex">
         <section class="footer-inputs flex justify-center align-center">
-            <!-- <button class="add-btn" onclick="addTextLine()">Next line</button> -->
-            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
-                data-trans="generator-text-placeholder" placeholder="Enter Text" autofocus>
+            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text">
         </section>
-
     </div>
-
     <a href="https"></a>
     <section class="footer">
         <div class="footer-container">
@@ -79,6 +73,14 @@
     </section>
     </section>
 
+
+    </section>
+    <div class="share-container"></div>
+
+
+
+
+    
     <script src="lib/jquery/jquery.js"></script>
     <script src="js/util.js"></script>
     <script src="js/i18service.js"></script>
@@ -87,5 +89,6 @@
     <script src="js/main-controller.js"></script>
     <script src="js/generator-controller.js"></script>
 </body>
+
 
 </html>
