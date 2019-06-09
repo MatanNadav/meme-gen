@@ -60,7 +60,7 @@ function textAlign(alignText) {
         lineOneObj.x = gImg.naturalWidth / 2;
         lineTwoObj.x = gImg.naturalWidth / 2;
     } else {
-        lineOneObj.x = gImg.naturalWidth - 40 ;
+        lineOneObj.x = gImg.naturalWidth - 40;
         lineTwoObj.x = gImg.naturalWidth - 40;
     }
     ctx.textAlign = alignText;
