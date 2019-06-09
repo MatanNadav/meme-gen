@@ -100,7 +100,7 @@ function setPopularSearches(inputVal) {
 }
 
 function getPopularSearchesArray() {
-    var searches = getSortedArrayFromObject();
+    let searches = getSortedArrayFromObject();
     return searches;
 }
 
