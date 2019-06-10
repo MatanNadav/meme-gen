@@ -131,6 +131,8 @@ button:hover {
 
 .inputfile + label:hover {
     cursor: pointer;
+    text-decoration: underline;
+    color: black;
 }
 
 .generator-lang-change, .lang-change {
@@ -146,6 +148,7 @@ button:hover {
     background: transparent;
     color: white;
     appearance: none;
+    background-color: firebrick;
 }
 
 li > p {
@@ -156,6 +159,20 @@ li > p {
 
 li > p:hover {
     cursor: pointer;
+    text-decoration: underline;
+    color: black;
+}
+
+li > a {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+li > a:hover {
+    text-decoration: underline;
 }
 
 .container {
@@ -177,7 +194,10 @@ li > p:hover {
 
 .buttons-container {
     flex-direction: row;
+    height: 5em;
+    margin-left: -3em;
 }
+
 
 .font {
     width: 7em;
