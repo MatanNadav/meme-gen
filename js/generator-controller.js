@@ -213,12 +213,11 @@ function onOperateModal(el) {
     }
 }
 
-<<<<<<< HEAD
 function onGetLines() {
     return getLines();
-=======
+}
+
 function toggleMenu() {
     document.querySelector('.side-nav').classList.toggle('open')
     
->>>>>>> f70fd10953fd825f3b6b1ccdcfc5a6d4cee98f71
 }
