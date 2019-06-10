@@ -44,10 +44,10 @@
     </div>
     <div class="group-one-btns flex">
         <section class="footer-inputs flex justify-center align-center">
-            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text" autofocus>
+            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Top Line" autofocus>
         </section>
         <section class="btns-box flex justify-center align-center">
-            <select onchange="changeFont(this.value)" class="font curser-pointer">
+            <select onchange="changeFont(this.value)" class="font btn curser-pointer">
                 <option value="impact">impact</option>
                 <option value="my-frank">frank</option>
                 <option value="Lato">Lato</option>
@@ -56,15 +56,20 @@
             <button class="left" onclick="textAlign(this.className)"><i class="fas fa-align-left"></i></button>
             <button class="center" onclick="textAlign(this.className)"><i class="fas fa-align-center"></i></button>
             <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
-            <button class="increese-font-size" onclick="fontSize(this.className)"><i class="fas fa-plus"></i></button>
-            <button class="decreese-font-size" onclick="fontSize(this.className)"><i class="fas fa-minus"></i></button>
-            <input type="color" value="#ffffff" class="change-color curser-pointer" onchange="changeColor(this.value)">
+            <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
+            <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
+            <input type="color" value="#ffffff" class="change-color btn curser-pointer" onchange="changeColor(this.value)">
             <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
         </section>
     </div>
-    <div class="group-two-btns flex">
+    <div class="group-one-btns flex">
         <section class="footer-inputs flex justify-center align-center">
-            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text">
+            <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Middle Line">
+        </section>
+    </div>
+    <div class="group-one-btns flex">
+        <section class="footer-inputs flex justify-center align-center">
+            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Bottom Line">
         </section>
     </div>
     <a href="https"></a>
