@@ -38,14 +38,33 @@
             </nav>
         </section>
     </header>
-    <div class="my-canvas flex justify-center">
 
-        <canvas class="meme-canvas" width="50" height="50"></canvas>
-    </div>
-    <section class="command-container">
-        <div class="buttons-container flex">
-            <section class="btns-box flex justify-center align-center">
-                <select onchange="changeFont(this.value)" class="font btn curser-pointer">
+    <section class="page-container flex column justify-center align-center">
+
+        <div class="my-canvas flex justify-center">
+
+            <canvas class="meme-canvas" width="50" height="50"></canvas>
+        </div>
+
+        <section class="command-container flex row wrap">
+
+            <section class="inputs-container flex column">
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Top Line" autofocus>
+                </div>
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Middle Line">
+                </div>
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Bottom Line">
+                </div>
+            </section>
+
+            <section class="buttons-container flex justify-center align-center">
+                <select onchange="changeFont(this.value)" class="font curser-pointer">
                     <option value="impact">impact</option>
                     <option value="my-frank">frank</option>
                     <option value="Lato">Lato</option>
@@ -56,27 +75,14 @@
                 <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
                 <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
                 <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
-                <input type="color" value="#ffffff" class="change-color btn curser-pointer"
+                <input type="color" value="#ffffff" class="change-color curser-pointer"
                     onchange="changeColor(this.value)">
                 <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
             </section>
-        </div>
-    
-        <section class="inputs-container flex column">
-            <div class="group-one-btns flex">
-                <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Top Line"
-                    autofocus>
-            </div>
-            <div class="group-one-btns flex">
-                <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)"
-                    placeholder="Enter Text Middle Line">
-            </div>
-            <div class="group-one-btns flex">
-                <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
-                    placeholder="Enter Text Bottom Line">
-            </div>
-    </section>
 
+        </section>
+
+    </section>
 
     <section class="footer">
         <div class="footer-container">
