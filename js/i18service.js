@@ -30,14 +30,38 @@ let gTrans = {
         he: 'שתפו אותנו'
 
     },
-    'generator-labal-file': {
+    'generator-label-file': {
         en: 'Choose a file',
         he: 'בחר קובץ',
     },
-    'add-todo-placeholder': {
-        en: 'What needs to be done?',
-        he: 'מה יש לעשות?'
-    }
+    'generator-contact-header': {
+        en: 'Enter your email:',
+        he: 'הכנס מייל'
+    },
+    'generator-email-submit': {
+        en: 'Submit',
+        he: 'שלח'
+    },
+    'generator-contact': {
+        en: 'Contact us',
+        he: 'צור קשר'
+    },
+    'generator-download-meme': {
+        en: 'Download',
+        he: 'הורד'
+    },
+    'generator-text-one': {
+        en: 'Enter Text Top Line',
+        he: 'טקסט שורה ראשונה'
+    },
+    'generator-text-two': {
+        en: 'Enter Text Middle Line',
+        he: 'טקסט שורה אמצעית'
+    },
+    'generator-text-three': {
+        en: 'Enter Text Bottom Line',
+        he: 'טקסט שורה אחרונה'
+    },
 }
 
 

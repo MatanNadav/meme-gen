@@ -22,17 +22,10 @@ function drawImgOnCanvas() {
     }
 }
 
-<<<<<<< HEAD
-function changeCanvasSize() {
-    if ($(window).width() <= 740) {
-        canvas.width = 470;
-        canvas.height = 460;
-=======
 function changedCanvasSize() {
     if($(window).width() <= 740) {
         canvas.width = 300;
         canvas.height = 300;
->>>>>>> 605f98910186ec3aceb736783d6c2b25720875f1
     } else {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
@@ -46,27 +39,6 @@ function changedCanvasSize() {
 
 function resetImgSettings() {
     ctx.fillStyle = 'white';
-<<<<<<< HEAD
-    ctx.strokeStyle = 'black';
-    ctx.textAlign = 'center';
-    ctx.font = '60px impact';
-    lines.forEach(element => {
-        element.x = gImg.naturalWidth / 2;
-    });
-    lines[0].y = 70;
-    lines[1].y = gImg.naturalHeight - 25;
-    lines[2].y = gImg.naturalHeight / 2;
-}
-
-function drawTextOnCanvas() {
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    lines[0].text = document.querySelector('.text-one').value;
-    lines[1].text = document.querySelector('.text-two').value;
-    lines[2].text = document.querySelector('.text-three').value;
-    lines.forEach(element => {
-        drawOneLineTextInCanvasWidth(element);
-    });
-=======
         ctx.strokeStyle = 'black';
         ctx.textAlign = 'center';
         ctx.font = '60px impact';
@@ -86,7 +58,6 @@ function drawTextOnCanvas() {
         lines.forEach(element => {
             drawOneLineTextInCanvasWidth(element);
         });
->>>>>>> 605f98910186ec3aceb736783d6c2b25720875f1
 }
 
 function changeFont(font) {
