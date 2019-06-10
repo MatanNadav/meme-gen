@@ -32,6 +32,9 @@ function changeCanvasSize() {
     }
     resetImgSettings();
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function resetImgSettings() {
