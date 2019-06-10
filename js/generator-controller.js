@@ -10,9 +10,6 @@ function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
     ctx = canvas.getContext('2d');
     drawImgOnCanvas();
-    console.log(screen.width);
-    console.log(screen.height);
-    
 }
 
 function drawImgOnCanvas() {
