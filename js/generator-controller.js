@@ -133,6 +133,26 @@ function drawText(text, posX, posY) {
     ctx.fillText(text, posX, posY);
 }
 
+function onInputChange(el) {
+    let radio;
+    if (el.dataset.trans === 'generator-text-two') {
+        radio = document.querySelector('.radio-text-two')
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    } else if (el.dataset.trans === 'generator-text-three') {
+        radio = document.querySelector('.radio-text-three')
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    } else {
+        radio = document.querySelector('.radio-text-one');
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    }
+}
+
 function onContactClick() {
     document.querySelector('.contact-container').classList.toggle('in')
 }
