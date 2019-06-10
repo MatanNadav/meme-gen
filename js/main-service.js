@@ -5,7 +5,6 @@ let gImagesToRemove = [];
 let gId = 1;
 let gPopularSearch;
 
-
 function createImages() {
 
     let imgs = getValue('allImages')
@@ -85,7 +84,6 @@ function getSearchedMemes(searchStr) {
         }
     })
 }
-
 
 function setPopularSearches(inputVal) {
     let str = inputVal;

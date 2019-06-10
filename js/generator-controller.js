@@ -3,12 +3,13 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }];
+let lines = [{ text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }];
 let isUploadImg = false;
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
     ctx = canvas.getContext('2d');
+    createLines();
     drawImgOnCanvas();
 }
 
@@ -39,25 +40,25 @@ function changedCanvasSize() {
 
 function resetImgSettings() {
     ctx.fillStyle = 'white';
-        ctx.strokeStyle = 'black';
-        ctx.textAlign = 'center';
-        ctx.font = '60px impact';
-        lines.forEach(element => {
-            element.x = canvas.width / 2;
-        });
-        lines[0].y = 70;
-        lines[1].y = canvas.height - 25;
-        lines[2].y = canvas.height / 2 + 20; 
+    ctx.strokeStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.font = '60px impact';
+    lines.forEach(element => {
+        element.x = canvas.width / 2;
+    });
+    lines[0].y = 70;
+    lines[1].y = canvas.height - 25;
+    lines[2].y = canvas.height / 2 + 20; 
 }
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-        lines[0].text = document.querySelector('.text-one').value;
-        lines[1].text = document.querySelector('.text-two').value;
-        lines[2].text = document.querySelector('.text-three').value;
-        lines.forEach(element => {
-            drawOneLineTextInCanvasWidth(element);
-        });
+    lines[0].text = document.querySelector('.text-one').value;
+    lines[1].text = document.querySelector('.text-two').value;
+    lines[2].text = document.querySelector('.text-three').value;
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function changeFont(font) {
