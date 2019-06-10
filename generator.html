@@ -17,7 +17,7 @@
         <h6 class="contact-header" data-trans="generator-contact-header">Enter your email:</h6>
         <input class="email-input" type="email"> <span class="user-email-confirmation"></span>
         <button class="email-submit" data-trans="generator-email-submit" onclick="onOperateModal(this)">Submit</button>
-        
+
     </div>
     <header>
         <section class="container header-wrapper flex">
@@ -41,7 +41,8 @@
                         <p class="contact" data-trans="generator-contact" onclick="onContactClick()">Contact us</p>
                     </li>
                     <li>
-                        <a class="download-meme" data-trans="generator-download-meme" href="#" onclick="downloadCanvas(this)" download="">Download</a>
+                        <a class="download-meme" data-trans="generator-download-meme" href="#"
+                            onclick="downloadCanvas(this)" download="">Download</a>
                     </li>
                 </ul>
 
@@ -60,16 +61,16 @@
 
             <section class="inputs-container flex column space-between">
                 <div class="line-input">
-                    <input type="text" class="text-one" data-trans="generator-text-one" onkeyup="drawTextOnCanvas(event)"
-                        placeholder="Enter Text Top Line" autofocus>
+                    <input type="radio" checked="checked" class="radio radio-text-one"> <input type="text" class="text-one" data-trans="generator-text-one"
+                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)"  placeholder="Enter Text Top Line" autofocus>
                 </div>
                 <div class="line-input">
-                    <input type="text" class="text-three" data-trans="generator-text-two" onkeyup="drawTextOnCanvas(event)"
-                        placeholder="Enter Text Middle Line">
+                    <input type="radio" class="radio radio-text-two"> <input type="text" class="text-two" data-trans="generator-text-two"
+                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Middle Line">
                 </div>
                 <div class="line-input">
-                    <input type="text" class="text-two" data-trans="generator-text-three" onkeyup="drawTextOnCanvas(event)"
-                        placeholder="Enter Text Bottom Line">
+                    <input type="radio" class="radio radio-text-three"> <input type="text" class="text-three" data-trans="generator-text-three"
+                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Bottom Line">
                 </div>
             </section>
 

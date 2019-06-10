@@ -3,8 +3,10 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }];
+let lines = [{ text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }];
 let isUploadImg = false;
+let gRadioPrevious = document.querySelector('.radio-text-one');
+
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
@@ -17,13 +19,13 @@ function drawImgOnCanvas() {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
-    gImg.onload = function () {  
+    gImg.onload = function () {
         changedCanvasSize();
     }
 }
 
 function changedCanvasSize() {
-    if($(window).width() <= 740) {
+    if ($(window).width() <= 740) {
         canvas.width = 300;
         canvas.height = 300;
     } else {
@@ -39,25 +41,25 @@ function changedCanvasSize() {
 
 function resetImgSettings() {
     ctx.fillStyle = 'white';
-        ctx.strokeStyle = 'black';
-        ctx.textAlign = 'center';
-        ctx.font = '60px impact';
-        lines.forEach(element => {
-            element.x = canvas.width / 2;
-        });
-        lines[0].y = 70;
-        lines[1].y = canvas.height - 25;
-        lines[2].y = canvas.height / 2 + 20; 
+    ctx.strokeStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.font = '60px impact';
+    lines.forEach(element => {
+        element.x = canvas.width / 2;
+    });
+    lines[0].y = 70;
+    lines[1].y = canvas.height - 25;
+    lines[2].y = canvas.height / 2 + 20;
 }
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-        lines[0].text = document.querySelector('.text-one').value;
-        lines[1].text = document.querySelector('.text-two').value;
-        lines[2].text = document.querySelector('.text-three').value;
-        lines.forEach(element => {
-            drawOneLineTextInCanvasWidth(element);
-        });
+    lines[0].text = document.querySelector('.text-one').value;
+    lines[1].text = document.querySelector('.text-two').value;
+    lines[2].text = document.querySelector('.text-three').value;
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function changeFont(font) {
@@ -160,6 +162,28 @@ function handleImageFromInput(ev, onImageReady) {
         img.src = event.target.result;
     }
     reader.readAsDataURL(ev.target.files[0]);
+}
+
+function onInputChange(el) {
+    let radio;
+    if (el.dataset.trans === 'generator-text-two') {
+        radio = document.querySelector('.radio-text-two')
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    } else if (el.dataset.trans === 'generator-text-three') {
+        radio = document.querySelector('.radio-text-three')
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    } else {
+        radio = document.querySelector('.radio-text-one');
+        radio.checked = true;
+        gRadioPrevious.checked = false;
+        gRadioPrevious = radio;
+    }
+    console.log(radio);
+    
 }
 
 function onContactClick() {
