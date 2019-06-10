@@ -80,7 +80,7 @@
 
         <section class="command-container flex row">
 
-            <section class="inputs-container flex column space-between">
+            <section class="inputs-container flex column">
                 <select class="line-option">
                     <option value="text-top">Top Line</option>
                     <option value="text-middle">Middle Line</option>
@@ -90,14 +90,6 @@
                     <input type="text" class="text" data-trans="generator-text-one"
                     onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Here" autofocus>
                 </div>
-                <!-- <div class="line-input">
-                     <input type="text" class="text-middle" data-trans="generator-text-two"
-                        onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Middle Line">
-                </div>
-                <div class="line-input">
-                     <input type="text" class="text-bottom" data-trans="generator-text-three"
-                        onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Bottom Line">
-                </div> -->
             </section>
 
             <section class="buttons-container flex justify-center align-center">
@@ -107,11 +99,11 @@
                     <option value="Lato">Lato</option>
                     <option value="trocchi">trocchi</option>
                 </select>
-                <button class="left" onclick="textAlign(this.className)"><i class="fas fa-align-left"></i></button>
-                <button class="center" onclick="textAlign(this.className)"><i class="fas fa-align-center"></i></button>
-                <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
-                <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
-                <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
+                <button class="left btn" onclick="textAlign(this.className)"><i class="fas fa-align-left"></i></button>
+                <button class="center btn" onclick="textAlign(this.className)"><i class="fas fa-align-center"></i></button>
+                <button class="right btn" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
+                <button class="increese-font-size btn" onclick="fontSize(this.className)">+</button>
+                <button class="decreese-font-size btn" onclick="fontSize(this.className)">-</button>
                 <input type="color" value="#ffffff" class="change-color curser-pointer"
                     onchange="changeColor(this.value)">
             </section>

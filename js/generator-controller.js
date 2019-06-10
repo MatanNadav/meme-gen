@@ -202,4 +202,5 @@ function onGetLines() {
 
 function toggleMenu() {
     document.querySelector('.side-nav').classList.toggle('open')
+    
 }
