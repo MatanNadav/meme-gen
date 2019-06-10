@@ -3,7 +3,7 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }];
+let lines = [{ text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }];
 let isUploadImg = false;
 
 function onInitGenerator() {
@@ -24,8 +24,8 @@ function drawImgOnCanvas() {
 
 function changedCanvasSize() {
     if($(window).width() <= 740) {
-        canvas.width = 470;
-        canvas.height = 460;
+        canvas.width = 370;
+        canvas.height = 370;
     } else {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
@@ -51,7 +51,6 @@ function resetImgSettings() {
 }
 
 function drawTextOnCanvas() {
-    getFontSize();
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
         lines[0].text = document.querySelector('.text-one').value;
         lines[1].text = document.querySelector('.text-two').value;
@@ -128,16 +127,4 @@ function drawOneLineTextInCanvasWidth(textObj) {
 function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
-}
-
-function setFontSize() {
-    lines.forEach(element => {
-        element.fontSize = ctx.font.split(' ')[0];
-    });
-}
-
-function getFontSize() {
-    lines.forEach(element => {
-        return Element.fontSize;
-    });
 }
