@@ -1,5 +1,4 @@
 /* Fonts  */
-
 @font-face {
     font-family: my-frank;
     src: url('../fonts/my-frank/FrankRuhlLibre-Regular.ttf');
@@ -27,11 +26,7 @@ body.rtl {
     direction: rtl;
 }
 
-
-
-
 /* Header  */
-
 header {
     background: firebrick;
     background: linear-gradient(black,firebrick,black);
@@ -52,7 +47,6 @@ header {
     padding: 10px;
 }
 
-  
 .add-meme:hover {
     background: firebrick;
 }
@@ -104,10 +98,6 @@ button:hover {
     z-index: 3;
 }
 
-.text-three {
-    margin-bottom: 10px;
-}
-
 .meme-canvas {
     border: solid 1px black;  
   }
@@ -121,6 +111,7 @@ button:hover {
 .group-one-btns {
     margin-left: 40%;
     width: 500px;
+    margin-bottom: 10px;
 }
 
 .main-menu li {
@@ -138,8 +129,6 @@ button:hover {
     font-size: 2rem;
     border-left: 1px solid #1e1e1e; 
 }
-
-
 
 .main-menu a.active {
     border-bottom: 6px solid black;
@@ -180,11 +169,7 @@ button:hover {
     margin: 2rem auto;
 }
 
-
-
 /* Popular searches */
-
-
 .popular {
     padding: 5px;
     margin: 5px;
@@ -206,7 +191,6 @@ button:hover {
 }
 
 /* Grid HomePage */
-
 .grid-container {
     display: grid;
     background-color: white;
@@ -243,7 +227,6 @@ button:hover {
     width: 100%;
     height: 100%;
 }
-
 
 /* Grow Shadow */
 .hvr-grow-shadow {
@@ -291,9 +274,7 @@ button:hover {
   /* Hack to improve aliasing on mobile/tablet devices */
 }
 
-
 /* Footer  */
-
 .footer {
     position: fixed;
     left: 0;
