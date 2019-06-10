@@ -209,6 +209,10 @@ li > a:hover {
     transition: 1.5s;
 }
 
+.radio {
+    display: none;
+}
+
 /* Command Container */
 
 .command-container {

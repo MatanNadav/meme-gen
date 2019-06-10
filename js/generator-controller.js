@@ -5,6 +5,8 @@ let ctx;
 let gImg = new Image();
 let lines = [{ text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }];
 let isUploadImg = false;
+let gRadioPrevious = document.querySelector('.radio-text-one');
+
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
@@ -18,13 +20,13 @@ function drawImgOnCanvas() {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
-    gImg.onload = function () {  
+    gImg.onload = function () {
         changedCanvasSize();
     }
 }
 
 function changedCanvasSize() {
-    if($(window).width() <= 740) {
+    if ($(window).width() <= 740) {
         canvas.width = 300;
         canvas.height = 300;
     } else {
@@ -48,7 +50,7 @@ function resetImgSettings() {
     });
     lines[0].y = 70;
     lines[1].y = canvas.height - 25;
-    lines[2].y = canvas.height / 2 + 20; 
+    lines[2].y = canvas.height / 2 + 20;
 }
 
 function drawTextOnCanvas() {
