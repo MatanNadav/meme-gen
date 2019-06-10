@@ -123,7 +123,7 @@ button:hover {
     width: 500px;
 }
 
-.main-menu a {
+.main-menu li {
     color: #fff;
     text-decoration: none;
     display: block;
@@ -132,10 +132,14 @@ button:hover {
     width: 8.4375rem;
     text-align: center;
     border-right: 1px solid #1e1e1e; 
-}
-.main-menu a:first-child {
+} 
+
+.main-menu li:first-child {
+    font-size: 2rem;
     border-left: 1px solid #1e1e1e; 
 }
+
+
 
 .main-menu a.active {
     border-bottom: 6px solid black;
@@ -172,7 +176,7 @@ button:hover {
     max-height: 4rem;
     width: 100%;
     height: 4rem;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
     margin: 2rem auto;
 }
 
@@ -205,7 +209,7 @@ button:hover {
 
 .grid-container {
     display: grid;
-    background-color: whitesmoke;
+    background-color: white;
     grid-template-rows: repeat(10, 10em);
     grid-template-columns: repeat(5, 10em);
     grid-row-gap: 20px;
@@ -336,6 +340,41 @@ ul.share-buttons .sr-only{
     list-style-type: none;
     margin: 0;
     padding: 0; 
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+}
+
+.inputfile + label:hover {
+    cursor: pointer;
+}
+
+.generator-lang-change, .lang-change {
+    font-family: 'Lato';
+    font-weight: bold;
+    display: inline-block;
+    width: 80%;
+    cursor: pointer;
+    padding: 7px 15px;
+    outline: 0;
+    border: 2px solid white;
+    border-radius: 0px;
+    background: transparent;
+    color: black;
+    appearance: none;
 }
 
 .flex {
