@@ -84,8 +84,6 @@ function onSearchMeme(inputVal) {
     renderPopularSearch();
 }
 
-
-
 function clearGrid() {
     let imgBox = document.querySelectorAll('.box');
     imgBox.forEach(box => {
@@ -105,15 +103,10 @@ function popularSearched(inputVal) {
 }
 
 function onSetLang(lang) {
-
     setLang(lang);
 
     if (lang === 'he') document.body.classList.add('rtl');
     else document.body.classList.remove('rtl');
 
     doTrans();
-
-
-
-
 }

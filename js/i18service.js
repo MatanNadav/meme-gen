@@ -64,15 +64,11 @@ let gTrans = {
     },
 }
 
-
-
-
 let gCurrLang = 'en';
 
 function setLang(lang) {
     gCurrLang = lang;
 }
-
 
 function doTrans() {
     var els = document.querySelectorAll('[data-trans]');
@@ -90,7 +86,6 @@ function doTrans() {
         }
     }
 }
-
 
 function getTrans(transKey) {
     var keyTrans = gTrans[transKey];

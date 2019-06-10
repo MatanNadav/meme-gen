@@ -29,14 +29,6 @@ function createLine(text, x, y, fontSize, fontType, align, color) {
     return line;
 }
 
-function saveValue(key, value) {
-    saveToStorage(key, value);
-}
-
-function getValue(key) {
-    return loadFromStorage(key);
-}
-
 function getLines() {
     return gLines;
 }

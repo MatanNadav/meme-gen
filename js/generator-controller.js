@@ -75,7 +75,6 @@ function drawTextOnCanvas() {
 function changeFont(font) {
     let lines = getLines();
     let option = document.querySelector('.line-option').value;
-    debugger
     if(option === 'text-top') {
         lines[0].fontType = font;
         ctx.font = lines[0].fontSize + ' ' + font;
@@ -86,8 +85,6 @@ function changeFont(font) {
         lines[1].fontType = font;
         ctx.font = lines[1].fontSize + ' ' + font;
     }
-    // ctx.font = lines[0].fontSize + ' ' + font;
-    // console.log(ctx.font);
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
@@ -98,9 +95,8 @@ function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     let option = document.querySelector('.line-option').value
     let lines = getLines();
-    // ctx.alignText = alignText;
     if(option === 'text-top') {
-        lines[0].alignText = alignText;
+        lines[0].align = alignText;
         if(alignText === 'left') {
             lines[0].x = 10;
         } else if(alignText === 'center') {
@@ -108,8 +104,11 @@ function textAlign(alignText) {
         } else {
             lines[0].x = canvas.width - 20;
         }
+        lines.forEach(element => {
+            drawText(element.text, element.align, element.x, element.y);
+        });
     } else if(option === 'text-middle') {
-        lines[2].alignText = alignText;
+        lines[2].align = alignText;
         if(alignText === 'left') {
             lines[2].x = 10;
         } else if(alignText === 'center') {
@@ -117,8 +116,11 @@ function textAlign(alignText) {
         } else {
             lines[2].x = canvas.width - 20;
         }
+        lines.forEach(element => {
+            drawText(element.text, element.align, element.x, element.y);
+        });
     } else {
-        lines[1].alignText = alignText;
+        lines[1].align = alignText;
         if(alignText === 'left') {
             lines[1].x = 10;
         } else if(alignText === 'center') {
@@ -126,12 +128,10 @@ function textAlign(alignText) {
         } else {
             lines[1].x = canvas.width - 20;
         }
+        lines.forEach(element => {
+            drawText(element.text, element.align, element.x, element.y);
+        });
     }
-    ctx.textAlign = alignText;
-    lines.forEach(element => {
-        drawText(element.text, element.x, element.y);
-        // drawOneLineTextInCanvasWidth(element);
-    });
 }
 
 function fontSize(fontSize) {
@@ -150,9 +150,11 @@ function fontSize(fontSize) {
 }
 
 function changeColor(color) {
+    let lines = getLines();
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     ctx.fillStyle = color;
     lines.forEach(element => {
+        element.color = color;
         drawOneLineTextInCanvasWidth(element);
     });
 }
@@ -160,17 +162,18 @@ function changeColor(color) {
 function drawOneLineTextInCanvasWidth(textObj) {
     let textWidth = ctx.measureText(textObj.text).width;
     if (textWidth <= canvas.width) {
-        drawText(textObj.text, textObj.x, textObj.y);
+        drawText(textObj.text, textObj.align, textObj.x, textObj.y);
     } else {
         let newText = textObj.text;
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
-        drawText(newText, textObj.x, textObj.y);
+        drawText(newText, textObj.align, textObj.x, textObj.y);
     }
 }
 
-function drawText(text, posX, posY) {
+function drawText(text, textAlign, posX, posY) {
+    ctx.textAlign = textAlign;
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
 }
@@ -202,5 +205,4 @@ function onGetLines() {
 
 function toggleMenu() {
     document.querySelector('.side-nav').classList.toggle('open')
-    
 }

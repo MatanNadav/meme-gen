@@ -42,7 +42,6 @@ function renderCanvas(img) {
     ctx.drawImage(gImg, 0, 0);
 }
 
-//UPLOAD IMG WITH INPUT FILE
 function handleImageFromInput(ev, onImageReady) {
     document.querySelector('.share-container').innerHTML = ''
     var reader = new FileReader();
