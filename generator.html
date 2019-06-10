@@ -16,20 +16,25 @@
             <nav id="mainMenu" class="main-menu-wrapper">
                 <ul class="main-menu clean-list flex">
                     <li>
-                        <a href="index.html" data-trans="generator-home-link">Home Page</a>
+                        <a href="index.html" data-trans="generator-home-link">🏠</a>
+                    </li>
+                    <li>
+                        <select class="generator-lang-change" onchange="onSetLang(this.value)">
+                            <option value="en">English</option>
+                            <option value="he">עברית</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input id="file" class="inputfile" type="file" name="image" onchange="onFileInputChange(event)" />
+                        <label for="file">Choose a file</label>
                     </li>
                 </ul>
-                <li>
-                    <select class="generator-lang-change" onchange="onSetLang(this.value)">
-                        <option value="en">English</option>
-                        <option value="he">עברית</option>
-                    </select>
-                </li>
+               
             </nav>
         </section>
     </header>
     <div class="my-canvas flex justify-center">
-        <input type="file" name="image" onchange="onFileInputChange(event)" />
+        
         <canvas class="meme-canvas" width="50" height="50"></canvas>
     </div>
     <div class="group-one-btns flex">
