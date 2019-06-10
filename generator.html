@@ -38,32 +38,33 @@
             </nav>
         </section>
     </header>
+
     <section class="page-container flex column justify-center align-center">
 
         <div class="my-canvas flex justify-center">
-            
-        <canvas class="meme-canvas" width="50" height="50"></canvas>
-    </div>
 
-    <section class="command-container flex row wrap"> 
-        
-        <section class="inputs-container flex column">
-            <div class="group-one-btns flex">
-                <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Top Line"
-                autofocus>
-            </div>
-            <div class="group-one-btns flex">
-                <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)"
-                placeholder="Enter Text Middle Line">
-            </div>
-            <div class="group-one-btns flex">
-                <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
-                placeholder="Enter Text Bottom Line">
-            </div>
-        </section>
-        
-        <section class="buttons-container flex justify-center align-center">
-            <select onchange="changeFont(this.value)" class="font curser-pointer">
+            <canvas class="meme-canvas" width="50" height="50"></canvas>
+        </div>
+
+        <section class="command-container flex row wrap">
+
+            <section class="inputs-container flex column">
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Top Line" autofocus>
+                </div>
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Middle Line">
+                </div>
+                <div class="group-one-btns flex">
+                    <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
+                        placeholder="Enter Text Bottom Line">
+                </div>
+            </section>
+
+            <section class="buttons-container flex justify-center align-center">
+                <select onchange="changeFont(this.value)" class="font curser-pointer">
                     <option value="impact">impact</option>
                     <option value="my-frank">frank</option>
                     <option value="Lato">Lato</option>
@@ -74,38 +75,39 @@
                 <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
                 <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
                 <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
-                <input type="color" value="#ffffff" class="change-color curser-pointer" onchange="changeColor(this.value)">
+                <input type="color" value="#ffffff" class="change-color curser-pointer"
+                    onchange="changeColor(this.value)">
                 <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
             </section>
-            
+
         </section>
-        
+
     </section>
-        
-        <section class="footer">
-            <div class="footer-container">
-                <p data-trans="generator-footer-share">Share us</p>
-                <ul class="share-buttons">
-                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook"
+
+    <section class="footer">
+        <div class="footer-container">
+            <p data-trans="generator-footer-share">Share us</p>
+            <ul class="share-buttons">
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" title="Share on Facebook"
                         target="_blank"> <img alt="Share on Facebook" src="social img/Facebook.png" /></a></li>
-                        <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img
-                                alt="Tweet" src="social img/Twitter.png" /></a></li>
-                    <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank"
-                            title="Pin it"><img alt="Pin it" src="social img/Pinterest.png" /></a></li>
-                </ul>
-            </div>
-        </section>
+                <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img
+                            alt="Tweet" src="social img/Twitter.png" /></a></li>
+                <li><a href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank"
+                        title="Pin it"><img alt="Pin it" src="social img/Pinterest.png" /></a></li>
+            </ul>
+        </div>
+    </section>
 
 
 
 
-        <script src="lib/jquery/jquery.js"></script>
-        <script src="js/util.js"></script>
-        <script src="js/i18service.js"></script>
-        <script src="js/generator-service.js"></script>
-        <script src="js/main-service.js"></script>
-        <script src="js/main-controller.js"></script>
-        <script src="js/generator-controller.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/i18service.js"></script>
+    <script src="js/generator-service.js"></script>
+    <script src="js/main-service.js"></script>
+    <script src="js/main-controller.js"></script>
+    <script src="js/generator-controller.js"></script>
 </body>
 
 
