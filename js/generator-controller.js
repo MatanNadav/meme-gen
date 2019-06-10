@@ -3,7 +3,7 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }];
+let lines = [{ text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }, { text: '', x: 0, y: 0, fontSize:0 }];
 let isUploadImg = false;
 
 function onInitGenerator() {
@@ -24,8 +24,8 @@ function drawImgOnCanvas() {
 
 function changedCanvasSize() {
     if($(window).width() <= 740) {
-        canvas.width = 370;
-        canvas.height = 370;
+        canvas.width = 300;
+        canvas.height = 300;
     } else {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
@@ -47,7 +47,7 @@ function resetImgSettings() {
         });
         lines[0].y = 70;
         lines[1].y = canvas.height - 25;
-        lines[2].y = canvas.height / 2; 
+        lines[2].y = canvas.height / 2 + 20; 
 }
 
 function drawTextOnCanvas() {
@@ -61,7 +61,7 @@ function drawTextOnCanvas() {
 }
 
 function changeFont(font) {
-    ctx.font = '60px ' + font;
+    ctx.font = lines[0].fontSize + ' ' + font;
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
@@ -100,6 +100,7 @@ function fontSize(fontSize) {
     }
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
+        element.fontSize = ctx.font.split(' ')[0];
     });
 }
 
