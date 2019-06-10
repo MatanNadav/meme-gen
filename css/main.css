@@ -21,7 +21,6 @@ html {
 
 body {
     margin: 0; 
-    background-color: beige;
 }
 
 body.rtl {
@@ -35,7 +34,7 @@ body.rtl {
 
 header {
     background: firebrick;
-    background: linear-gradient(black,firebrick, orangered,black);
+    background: linear-gradient(black,firebrick,black);
     opacity: 0.8;
     margin-bottom: 20px;
 }
@@ -70,8 +69,12 @@ header .header-wrapper {
 
 h1 {
     color: white;
-    font-size: 2rem;
-}
+    font-size: 2rem;}
+    @media (max-width: 740px) {
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
 
 button:hover {
     cursor: pointer;
@@ -141,31 +144,7 @@ button:hover {
         max-width: 100%; } 
 }
 
-.clean-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; 
-}
 
-.flex {
-    display: flex; 
-}
-
-.justify-center {
-    justify-content: center; 
-}
-  
-.align-center {
-    align-items: center; 
-}
-  
-.space-between {
-    justify-content: space-between; 
-}
-  
-.space-around {
-    justify-content: space-around; 
-}
 
 /* Search Container */
 
@@ -175,9 +154,10 @@ button:hover {
     width: 100%;
     height: 4rem;
     background-color: antiquewhite;
-    opacity: 1;
     margin: 2rem auto;
 }
+
+
 
 /* Popular searches */
 
@@ -186,6 +166,16 @@ button:hover {
     padding: 5px;
     margin: 5px;
 }
+
+.popular-container {
+
+}
+    @media (max-width: 740px) {
+        .popular-container {
+            flex-direction: column;
+            align-items: center; 
+        }
+    }
 
 .popular:hover {
     text-shadow: #1e1e1e;
@@ -196,14 +186,19 @@ button:hover {
 
 .grid-container {
     display: grid;
-    background-color: beige;
+    background-color: whitesmoke;
     grid-template-rows: repeat(10, 10em);
     grid-template-columns: repeat(5, 10em);
     grid-row-gap: 20px;
     grid-column-gap: 20px;
     justify-content: center;
-    margin-bottom: 5rem;
-}
+    margin-bottom: 5rem; }
+    @media (max-width: 740px) {
+        .grid-container {
+          max-width: 740px;
+          grid-template-columns: repeat(2, 7em);
+          grid-template-rows: repeat(25, 7em);
+    } }
 
 .grid-canvas {
     display: grid;
@@ -281,7 +276,6 @@ button:hover {
     left: 0;
     bottom: -55px;
     width: 100%;
-    /* height: 13%; */
     background-color: black;
     opacity: 0.7;
     color: white;
@@ -293,7 +287,7 @@ button:hover {
 }
 
 .footer:hover {
-    height: 17%;
+    height: 20%;
     opacity: 1;
     transition: 0.5s;
 }
@@ -318,4 +312,29 @@ ul.share-buttons .sr-only{
     overflow: hidden;
 }
 
-/* Modal  */
+/* Helpers  */
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+}
+
+.flex {
+    display: flex; 
+}
+
+.justify-center {
+    justify-content: center; 
+}
+  
+.align-center {
+    align-items: center; 
+}
+  
+.space-between {
+    justify-content: space-between; 
+}
+  
+.space-around {
+    justify-content: space-around; 
+}

@@ -97,7 +97,6 @@ function setPopularSearches(inputVal) {
     gPopularSearch[str] ? gPopularSearch[str]++ : gPopularSearch[str] = 1;
 
     saveValue('popularSearch', gPopularSearch)
-    console.log(gPopularSearch);
 }
 
 function getPopularSearchesArray() {

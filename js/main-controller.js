@@ -5,8 +5,6 @@ function onInitMain() {
     createImgContainer(imgs.length)
     renderImage(imgs);
     renderPopularSearch();
-    console.log('database', imgs);
-
 }
 
 function createImgContainer(size) {
@@ -72,8 +70,14 @@ function renderPopularSearch() {
 
 
 function onSearchMeme(inputVal) {
-
-    var searchedImgs = getSearchedMemes(inputVal);
+    if(inputVal.length < 3 && inputVal.length > 1) return;
+    else if(inputVal.length === 1) {
+        // debugger
+        onInitMain()
+        return;
+    }
+    
+    let searchedImgs = getSearchedMemes(inputVal);
     if (searchedImgs[0]) clearGrid()
     createImgContainer(searchedImgs.length)
     renderImage(searchedImgs);
@@ -81,12 +85,12 @@ function onSearchMeme(inputVal) {
     renderPopularSearch();
 }
 
-function operateModal() {
-    $('.modal').show();
-    $('.close, .btn-secondary').click(function () {
-        $('.modal').hide();
-    })
-}
+// function operateModal() {
+//     $('.modal').show();
+//     $('.close, .btn-secondary').click(function () {
+//         $('.modal').hide();
+//     })
+// }
 
 function clearGrid() {
     let imgBox = document.querySelectorAll('.box');
