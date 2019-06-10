@@ -74,6 +74,7 @@ button:hover {
 .btns-box {
     margin-top: 10px;
     padding-left: 20px;
+    flex-direction: row;
 }
 
 .text {
@@ -175,6 +176,11 @@ li > p:hover {
         max-width: 100%; } 
 }
 
+/* Button Container */
+
+.inputs-container {
+   
+}
 
 
 /* Search Container */
@@ -334,22 +340,6 @@ ul.share-buttons .sr-only{
     overflow: hidden;
 }
 
-/* Modal */
-.modal {
-    text-align: center;
-    padding: 10px;
-}
-
-.fade-scale {
-    transform: scale(0);
-    opacity: 0;
-    transition: all .25s linear;
-}
-  
-.in {
-    opacity: 1;
-    transform: scale(1);
-} 
 
 /* Helpers  */
 .clean-list {
@@ -385,4 +375,12 @@ ul.share-buttons .sr-only{
   
 .space-around {
     justify-content: space-around; 
-}   
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}

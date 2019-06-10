@@ -42,37 +42,42 @@
 
         <canvas class="meme-canvas" width="50" height="50"></canvas>
     </div>
-    <div class="group-one-btns flex">
-        <section class="footer-inputs flex justify-center align-center">
-            <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Top Line" autofocus>
-        </section>
-        <section class="btns-box flex justify-center align-center">
-            <select onchange="changeFont(this.value)" class="font btn curser-pointer">
-                <option value="impact">impact</option>
-                <option value="my-frank">frank</option>
-                <option value="Lato">Lato</option>
-                <option value="trocchi">trocchi</option>
-            </select>
-            <button class="left" onclick="textAlign(this.className)"><i class="fas fa-align-left"></i></button>
-            <button class="center" onclick="textAlign(this.className)"><i class="fas fa-align-center"></i></button>
-            <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
-            <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
-            <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
-            <input type="color" value="#ffffff" class="change-color btn curser-pointer" onchange="changeColor(this.value)">
-            <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
-        </section>
-    </div>
-    <div class="group-one-btns flex">
-        <section class="footer-inputs flex justify-center align-center">
-            <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Middle Line">
-        </section>
-    </div>
-    <div class="group-one-btns flex">
-        <section class="footer-inputs flex justify-center align-center">
-            <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Bottom Line">
-        </section>
-    </div>
-    <a href="https"></a>
+    <section class="command-container">
+        <div class="buttons-container flex">
+            <section class="btns-box flex justify-center align-center">
+                <select onchange="changeFont(this.value)" class="font btn curser-pointer">
+                    <option value="impact">impact</option>
+                    <option value="my-frank">frank</option>
+                    <option value="Lato">Lato</option>
+                    <option value="trocchi">trocchi</option>
+                </select>
+                <button class="left" onclick="textAlign(this.className)"><i class="fas fa-align-left"></i></button>
+                <button class="center" onclick="textAlign(this.className)"><i class="fas fa-align-center"></i></button>
+                <button class="right" onclick="textAlign(this.className)"><i class="fas fa-align-right"></i></button>
+                <button class="increese-font-size" onclick="fontSize(this.className)">+</button>
+                <button class="decreese-font-size" onclick="fontSize(this.className)">-</button>
+                <input type="color" value="#ffffff" class="change-color btn curser-pointer"
+                    onchange="changeColor(this.value)">
+                <a href="#" onclick="downloadCanvas(this)" download="">Download</a>
+            </section>
+        </div>
+    
+        <section class="inputs-container flex column">
+            <div class="group-one-btns flex">
+                <input type="text" class="text-one" onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Top Line"
+                    autofocus>
+            </div>
+            <div class="group-one-btns flex">
+                <input type="text" class="text-three" onkeyup="drawTextOnCanvas(event)"
+                    placeholder="Enter Text Middle Line">
+            </div>
+            <div class="group-one-btns flex">
+                <input type="text" class="text-two" onkeyup="drawTextOnCanvas(event)"
+                    placeholder="Enter Text Bottom Line">
+            </div>
+    </section>
+
+
     <section class="footer">
         <div class="footer-container">
             <p data-trans="generator-footer-share">Share us</p>
@@ -86,31 +91,7 @@
             </ul>
         </div>
     </section>
-    </section>
 
-
-        <section class="modal-container">
-            <div class="modal fade-scale" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Hey there</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <input type="email" placeholder="Enter your email">
-                            <p class="email-confirm"></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="onEmailReceived()">Save changes</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
 
