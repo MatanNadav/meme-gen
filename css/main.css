@@ -71,12 +71,6 @@ button:hover {
     cursor: pointer;
 }
 
-.btns-box {
-    margin-top: 10px;
-    padding-left: 20px;
-    flex-direction: row;
-}
-
 .text {
     margin-left: 15px;
     z-index: 3;
@@ -87,9 +81,8 @@ button:hover {
 }
 
 .my-canvas {
-    /* margin: 20px; */
-    /* margin-left: 0%; */
     z-index: 1;
+    margin-bottom: 1rem;
 }
 
 .group-one-btns {
@@ -151,7 +144,7 @@ button:hover {
     border: 2px solid white;
     border-radius: 0px;
     background: transparent;
-    color: black;
+    color: white;
     appearance: none;
 }
 
@@ -176,11 +169,30 @@ li > p:hover {
         max-width: 100%; } 
 }
 
-/* Button Container */
+/* Command Container */
+
+.command-container {
+    margin-bottom: 5.5rem;
+}
+
+.buttons-container {
+    flex-direction: row;
+}
+
+.font {
+    width: 7em;
+    margin: 1em
+}
+
+.change-color {
+    margin: 1em;
+}
 
 .inputs-container {
-   
+    width: 26rem;
+    margin-left: -8em;
 }
+
 
 
 /* Search Container */
