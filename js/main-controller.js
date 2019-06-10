@@ -5,8 +5,6 @@ function onInitMain() {
     createImgContainer(imgs.length)
     renderImage(imgs);
     renderPopularSearch();
-    console.log('database', imgs);
-
 }
 
 function createImgContainer(size) {

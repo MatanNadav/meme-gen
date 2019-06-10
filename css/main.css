@@ -69,8 +69,12 @@ header .header-wrapper {
 
 h1 {
     color: white;
-    font-size: 2rem;
-}
+    font-size: 2rem;}
+    @media (max-width: 740px) {
+        h1 {
+            font-size: 1rem;
+        }
+    }
 
 button:hover {
     cursor: pointer;
@@ -173,9 +177,11 @@ button:hover {
     width: 100%;
     height: 4rem;
     background-color: antiquewhite;
-    opacity: 1;
+    /* opacity: 1; */
     margin: 2rem auto;
 }
+
+
 
 /* Popular searches */
 
@@ -184,6 +190,16 @@ button:hover {
     padding: 5px;
     margin: 5px;
 }
+
+.popular-container {
+
+}
+    @media (max-width: 740px) {
+        .popular-container {
+            flex-direction: column;
+            align-items: center; 
+        }
+    }
 
 .popular:hover {
     text-shadow: #1e1e1e;
@@ -200,8 +216,13 @@ button:hover {
     grid-row-gap: 20px;
     grid-column-gap: 20px;
     justify-content: center;
-    margin-bottom: 5rem;
-}
+    margin-bottom: 5rem; }
+    @media (max-width: 740px) {
+        .grid-container {
+          max-width: 740px;
+          grid-template-columns: repeat(2, 7em);
+          grid-template-rows: repeat(25, 7em);
+    } }
 
 .grid-canvas {
     display: grid;
