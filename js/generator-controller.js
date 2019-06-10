@@ -17,12 +17,12 @@ function drawImgOnCanvas() {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
-    gImg.onload = function () { 
-        changeCanvasSize();
+    gImg.onload = function () {  
+        changedCanvasSize();
     }
 }
 
-function changeCanvasSize() {
+function changedCanvasSize() {
     if($(window).width() <= 740) {
         canvas.width = 470;
         canvas.height = 460;
@@ -80,7 +80,7 @@ function textAlign(alignText) {
         });
     } else {
         lines.forEach(element => {
-            element.x = canvas.width - 40;
+            element.x = canvas.width - 20;
         });
     }
     ctx.textAlign = alignText;
