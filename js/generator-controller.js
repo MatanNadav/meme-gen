@@ -13,7 +13,7 @@ function onInitGenerator() {
 }
 
 function drawImgOnCanvas() {
-    if(!isUploadImg) {
+    if (!isUploadImg) {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
@@ -23,7 +23,7 @@ function drawImgOnCanvas() {
 }
 
 function changeCanvasSize() {
-    if($(window).width() <= 740) {
+    if ($(window).width() <= 740) {
         canvas.width = 470;
         canvas.height = 460;
     } else {
@@ -36,25 +36,25 @@ function changeCanvasSize() {
 
 function resetImgSettings() {
     ctx.fillStyle = 'white';
-        ctx.strokeStyle = 'black';
-        ctx.textAlign = 'center';
-        ctx.font = '60px impact';
-        lines.forEach(element => {
-            element.x = gImg.naturalWidth / 2;
-        });
-        lines[0].y = 70;
-        lines[1].y = gImg.naturalHeight - 25;
-        lines[2].y = gImg.naturalHeight / 2; 
+    ctx.strokeStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.font = '60px impact';
+    lines.forEach(element => {
+        element.x = gImg.naturalWidth / 2;
+    });
+    lines[0].y = 70;
+    lines[1].y = gImg.naturalHeight - 25;
+    lines[2].y = gImg.naturalHeight / 2;
 }
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-        lines[0].text = document.querySelector('.text-one').value;
-        lines[1].text = document.querySelector('.text-two').value;
-        lines[2].text = document.querySelector('.text-three').value;
-        lines.forEach(element => {
-            drawOneLineTextInCanvasWidth(element);
-        });
+    lines[0].text = document.querySelector('.text-one').value;
+    lines[1].text = document.querySelector('.text-two').value;
+    lines[2].text = document.querySelector('.text-three').value;
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function changeFont(font) {
@@ -111,14 +111,14 @@ function drawOneLineTextInCanvasWidth(textObj) {
     if (textWidth <= canvas.width) {
         drawText(textObj.text, textObj.x, textObj.y);
     } else {
-        let newText =  textObj.text;  
+        let newText = textObj.text;
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
         drawText(newText, textObj.x, textObj.y);
     }
 }
- 
+
 function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
@@ -154,4 +154,26 @@ function handleImageFromInput(ev, onImageReady) {
         img.src = event.target.result;
     }
     reader.readAsDataURL(ev.target.files[0]);
+}
+
+function onContactClick() {
+    document.querySelector('.contact-container').classList.toggle('in')
+
+}
+
+function onOperateModal(el) {
+    let email = document.querySelector('.email-input').value
+    let userMsg = document.querySelector('.user-email-confirmation')
+    const cross = '❌';
+    const check = '✔️';
+    if (!email) {
+        userMsg = document.querySelector('.user-email-confirmation')
+        userMsg.innerText = cross;
+        return;
+    }
+    else {
+        let emails = [];
+        emails.push(email);
+        userMsg.innerText = check;
+    }
 }
