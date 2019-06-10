@@ -173,3 +173,8 @@ function onOperateModal(el) {
         userMsg.innerText = check;
     }
 }
+
+function toggleMenu() {
+    document.querySelector('.side-nav').classList.toggle('open')
+    
+}

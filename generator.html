@@ -17,12 +17,10 @@
         <h6 class="contact-header" data-trans="generator-contact-header">Enter your email:</h6>
         <input class="email-input" type="email"> <span class="user-email-confirmation"></span>
         <button class="email-submit" data-trans="generator-email-submit" onclick="onOperateModal(this)">Submit</button>
-<<<<<<< HEAD
-=======
 
->>>>>>> 6a8d26965272174df220208fd8017ecb4f617dae
     </div>
     <header>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         <section class="container header-wrapper flex">
             <nav id="mainMenu" class="main-menu-wrapper">
                 <ul class="main-menu clean-list flex">
@@ -48,9 +46,30 @@
                             onclick="downloadCanvas(this)" download="">Download</a>
                     </li>
                 </ul>
+
             </nav>
         </section>
     </header>
+    <div class="side-nav">
+        <ul class="side-nav-list clean-list flex column justify-center">
+            <li><a href="index.html">🏠</a></li>
+            <li><a class="download-meme" data-trans="generator-download-meme" href="#" onclick="downloadCanvas(this)"
+                    download="">Download</a></li>
+            <li>
+                <p class="contact" data-trans="generator-contact" onclick="onContactClick()">Contact us</p>
+            </li>
+            <li>
+                <select class="generator-lang-change" onchange="onSetLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="he">עברית</option>
+                </select>
+            </li>
+            <li>
+                <input id="file" class="inputfile" type="file" name="image" onchange="onFileInputChange(event)" />
+                <label data-trans="generator-label-file" for="file">Choose a file</label>
+            </li>
+        </ul>
+    </div>
 
     <section class="page-container flex column justify-center align-center">
 
@@ -63,16 +82,19 @@
 
             <section class="inputs-container flex column space-between">
                 <div class="line-input">
-                    <input type="radio" checked="checked" class="radio radio-text-one"> <input type="text" class="text-top" data-trans="generator-text-one"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)"  placeholder="Enter Text Top Line" autofocus>
+                    <input type="radio" checked="checked" class="radio radio-text-one"> <input type="text"
+                        class="text-top" data-trans="generator-text-one" onkeyup="drawTextOnCanvas(event)"
+                        onmousedown="onInputChange(this)" placeholder="Enter Text Top Line" autofocus>
                 </div>
                 <div class="line-input">
-                    <input type="radio" class="radio radio-text-two"> <input type="text" class="text-middle" data-trans="generator-text-two"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Middle Line">
+                    <input type="radio" class="radio radio-text-two"> <input type="text" class="text-middle"
+                        data-trans="generator-text-two" onkeyup="drawTextOnCanvas(event)"
+                        onmousedown="onInputChange(this)" placeholder="Enter Text Middle Line">
                 </div>
                 <div class="line-input">
-                    <input type="radio" class="radio radio-text-three"> <input type="text" class="text-bottom" data-trans="generator-text-three"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Bottom Line">
+                    <input type="radio" class="radio radio-text-three"> <input type="text" class="text-bottom"
+                        data-trans="generator-text-three" onkeyup="drawTextOnCanvas(event)"
+                        onmousedown="onInputChange(this)" placeholder="Enter Text Bottom Line">
                 </div>
             </section>
 
