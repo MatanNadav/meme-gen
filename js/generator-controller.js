@@ -3,9 +3,6 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let topLineObj = { text: '', x: 0, y: 0 };
-let bottomLineObj = { text: '', x: 0, y: 0 };
-let middleLineObj = { text: '', x: 0, y: 0 };
 let lines = [{ text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }];
 let isUploadImg = false;
 
@@ -21,11 +18,20 @@ function drawImgOnCanvas() {
         gImg.src = imgFromStorage.imgUrl;
     }
     gImg.onload = function () {
+        changeCanvasSize();
+        resetImgSettings();
+    }
+}
+
+function changeCanvasSize() {
+    if($(window).width() <= 740) {
+        canvas.width = 470;
+        canvas.height = 460;
+    } else {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
-        resetImgSettings();
-        ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     }
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
 }
 
 function resetImgSettings() {
@@ -39,12 +45,6 @@ function resetImgSettings() {
         lines[0].y = 70;
         lines[1].y = gImg.naturalHeight - 25;
         lines[2].y = gImg.naturalHeight / 2; 
-        topLineObj.x = gImg.naturalWidth / 2;
-        topLineObj.y = 70;
-        bottomLineObj.x = gImg.naturalWidth / 2;
-        bottomLineObj.y = gImg.naturalHeight - 25; 
-        middleLineObj.x = gImg.naturalWidth / 2; 
-        middleLineObj.y = gImg.naturalHeight / 2; 
 }
 
 function drawTextOnCanvas() {
@@ -67,9 +67,6 @@ function changeFont(font) {
 
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    topLineObj.text = document.querySelector('.text-one').value;
-    bottomLineObj.text = document.querySelector('.text-two').value;
-    middleLineObj.text = document.querySelector('.text-three').value;
     if (alignText === 'left') {
         lines.forEach(element => {
             element.x = 10;
@@ -126,13 +123,6 @@ function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
 }
-
-// function drawText(lines) {
-//     lines.forEach(element => {
-//         ctx.strokeText(element.text, element.x, element.y);
-//         ctx.fillText(element.text, element.x, element.y);
-//     });
-// }
 
 function downloadCanvas(elLink) {
     const data = canvas.toDataURL();
