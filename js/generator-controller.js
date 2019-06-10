@@ -53,9 +53,9 @@ function resetImgSettings() {
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-    lines[0].text = document.querySelector('.text-one').value;
-    lines[1].text = document.querySelector('.text-two').value;
-    lines[2].text = document.querySelector('.text-three').value;
+    lines[0].text = document.querySelector('.text-top').value;
+    lines[1].text = document.querySelector('.text-bottom').value;
+    lines[2].text = document.querySelector('.text-middle').value;
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
     });
@@ -131,41 +131,8 @@ function drawText(text, posX, posY) {
     ctx.fillText(text, posX, posY);
 }
 
-function downloadCanvas(elLink) {
-    const data = canvas.toDataURL();
-    elLink.href = data;
-    elLink.download = 'my-img.jpg';
-}
-
-function onFileInputChange(ev) {
-    handleImageFromInput(ev, renderCanvas)
-}
-
-function renderCanvas(img) {
-    isUploadImg = true;
-    gImg = img;
-    canvas.width = gImg.width;
-    canvas.height = gImg.height;
-    resetImgSettings();
-    ctx.drawImage(gImg, 0, 0);
-}
-
-//UPLOAD IMG WITH INPUT FILE
-function handleImageFromInput(ev, onImageReady) {
-    document.querySelector('.share-container').innerHTML = ''
-    var reader = new FileReader();
-
-    reader.onload = function (event) {
-        var img = new Image();
-        img.onload = onImageReady.bind(null, img)
-        img.src = event.target.result;
-    }
-    reader.readAsDataURL(ev.target.files[0]);
-}
-
 function onContactClick() {
     document.querySelector('.contact-container').classList.toggle('in')
-
 }
 
 function onOperateModal(el) {
