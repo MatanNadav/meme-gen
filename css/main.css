@@ -76,17 +76,36 @@ h1 {
         }
     }
 
+.btn {
+    margin-right: 10px;
+    height: 30px;
+    width: 4rem;
+    font-size: 15px;
+}
+
+button {
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+}
+
 button:hover {
     cursor: pointer;
 }
 
 .btns-box {
     margin-top: 10px;
+    padding-left: 20px;
 }
 
 .text {
     margin-left: 15px;
     z-index: 3;
+}
+
+.text-three {
+    margin-bottom: 10px;
 }
 
 .meme-canvas {

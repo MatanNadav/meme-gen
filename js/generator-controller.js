@@ -3,8 +3,10 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lineOneObj = { text: '', x: 0, y: 0 };
-let lineTwoObj = { text: '', x: 0, y: 0 };
+let topLineObj = { text: '', x: 0, y: 0 };
+let bottomLineObj = { text: '', x: 0, y: 0 };
+let middleLineObj = { text: '', x: 0, y: 0 };
+let lines = [{ text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }, { text: '', x: 0, y: 0 }];
 let isUploadImg = false;
 
 function onInitGenerator() {
@@ -31,46 +33,60 @@ function resetImgSettings() {
         ctx.strokeStyle = 'black';
         ctx.textAlign = 'center';
         ctx.font = '60px impact';
-        lineOneObj.x = gImg.naturalWidth / 2;
-        lineOneObj.y = 70;
-        lineTwoObj.x = gImg.naturalWidth / 2;
-        lineTwoObj.y = gImg.naturalHeight - 25; 
+        lines.forEach(element => {
+            element.x = gImg.naturalWidth / 2;
+        });
+        lines[0].y = 70;
+        lines[1].y = gImg.naturalHeight - 25;
+        lines[2].y = gImg.naturalHeight / 2; 
+        topLineObj.x = gImg.naturalWidth / 2;
+        topLineObj.y = 70;
+        bottomLineObj.x = gImg.naturalWidth / 2;
+        bottomLineObj.y = gImg.naturalHeight - 25; 
+        middleLineObj.x = gImg.naturalWidth / 2; 
+        middleLineObj.y = gImg.naturalHeight / 2; 
 }
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-        lineOneObj.text = document.querySelector('.text-one').value;
-        lineTwoObj.text = document.querySelector('.text-two').value;
-        // ctx.save();
-        drawOneLineTextInCanvasWidth();
-        drawTwoLineTextInCanvasWidth(); 
-        // ctx.restore();
+        lines[0].text = document.querySelector('.text-one').value;
+        lines[1].text = document.querySelector('.text-two').value;
+        lines[2].text = document.querySelector('.text-three').value;
+        lines.forEach(element => {
+            drawOneLineTextInCanvasWidth(element);
+        });
 }
 
 function changeFont(font) {
     ctx.font = '60px ' + font;
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    drawOneLineTextInCanvasWidth();
-    drawTwoLineTextInCanvasWidth();
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
-    lineOneObj.text = document.querySelector('.text-one').value;
-    lineTwoObj.text = document.querySelector('.text-two').value;
+    topLineObj.text = document.querySelector('.text-one').value;
+    bottomLineObj.text = document.querySelector('.text-two').value;
+    middleLineObj.text = document.querySelector('.text-three').value;
     if (alignText === 'left') {
-            lineOneObj.x = 10;
-            lineTwoObj.x = 10;
+        lines.forEach(element => {
+            element.x = 10;
+        });
     } else if (alignText === 'center') {
-        lineOneObj.x = gImg.naturalWidth / 2;
-        lineTwoObj.x = gImg.naturalWidth / 2;
+        lines.forEach(element => {
+            element.x = gImg.naturalWidth / 2;
+        });
     } else {
-        lineOneObj.x = gImg.naturalWidth - 40;
-        lineTwoObj.x = gImg.naturalWidth - 40;
+        lines.forEach(element => {
+            element.x = gImg.naturalWidth - 40;
+        });
     }
     ctx.textAlign = alignText;
-    drawText(lineOneObj.text, lineOneObj.x, lineOneObj.y);
-    drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
+    lines.forEach(element => {
+        drawText(element.text, element.x, element.y);
+    });
 }
 
 function fontSize(fontSize) {
@@ -80,29 +96,29 @@ function fontSize(fontSize) {
     } else {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) - 2) + 'px');
     }
-    drawOneLineTextInCanvasWidth();
-    drawTwoLineTextInCanvasWidth();
+    lines.forEach(element => {
+        drawOneLineTextInCanvasWidth(element);
+    });
 }
 
 function changeColor(color) {
     ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
     ctx.fillStyle = color;
-    lineOneObj.text = document.querySelector('.text-one').value;
-    lineTwoObj.text = document.querySelector('.text-two').value;
-    drawText(lineOneObj.text, lineOneObj.x, lineOneObj.y);
-    drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
+    lines.forEach(element => {
+        drawText(element.text, element.x, element.y);
+    });
 }
 
-function drawOneLineTextInCanvasWidth() {
-    let textWidth = ctx.measureText(lineOneObj.text).width;
+function drawOneLineTextInCanvasWidth(textObj) {
+    let textWidth = ctx.measureText(textObj.text).width;
     if (textWidth <= canvas.width) {
-        drawText(lineOneObj.text, lineOneObj .x, lineOneObj.y);
+        drawText(textObj.text, textObj.x, textObj.y);
     } else {
-        let newText =  lineOneObj.text;  
+        let newText =  textObj.text;  
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
-        drawText(newText, lineOneObj.x, lineOneObj.y);
+        drawText(newText, textObj.x, textObj.y);
     }
 }
  
@@ -111,39 +127,18 @@ function drawText(text, posX, posY) {
     ctx.fillText(text, posX, posY);
 }
 
-function drawTwoLineTextInCanvasWidth() {
-    let textWidth = ctx.measureText(lineTwoObj.text).width;
-    if (textWidth <= canvas.width) {
-        drawText(lineTwoObj.text, lineTwoObj.x, lineTwoObj.y);
-    } else {
-        let newText = lineTwoObj.text;
-        do {
-            newText = newText.slice(0, -1);
-        } while (ctx.measureText(newText).width > canvas.width)
-        drawText(newText, lineTwoObj.x, lineTwoObj.y);
-    }
-}
+// function drawText(lines) {
+//     lines.forEach(element => {
+//         ctx.strokeText(element.text, element.x, element.y);
+//         ctx.fillText(element.text, element.x, element.y);
+//     });
+// }
 
 function downloadCanvas(elLink) {
     const data = canvas.toDataURL();
     elLink.href = data;
     elLink.download = 'my-img.jpg';
 }
-
-// function splitTextToLines(originalText) {
-// let lines = [];
-// let textWidth = ctx.measureText(textObj.text).width;
-// if (textWidth <= canvas.width || originalText.length === 0) {
-//     lines.push(originalText);
-// } else {
-//     let newText = originalText;
-//     do {
-//         newText = newText.slice(0, -1);
-//     } while (ctx.measureText(newText).width > canvas.width)
-
-// }
-// return lines;
-// }
 
 function onFileInputChange(ev) {
     handleImageFromInput(ev, renderCanvas)
