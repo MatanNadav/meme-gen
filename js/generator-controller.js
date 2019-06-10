@@ -17,7 +17,7 @@ function drawImgOnCanvas() {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
-    gImg.onload = function () {
+    gImg.onload = function () { 
         changeCanvasSize();
     }
 }
@@ -40,15 +40,15 @@ function resetImgSettings() {
         ctx.textAlign = 'center';
         ctx.font = '60px impact';
         lines.forEach(element => {
-            element.x = gImg.naturalWidth / 2;
+            element.x = canvas.width / 2;
         });
         lines[0].y = 70;
-        lines[1].y = gImg.naturalHeight - 25;
-        lines[2].y = gImg.naturalHeight / 2; 
+        lines[1].y = canvas.height - 25;
+        lines[2].y = canvas.height / 2; 
 }
 
 function drawTextOnCanvas() {
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
         lines[0].text = document.querySelector('.text-one').value;
         lines[1].text = document.querySelector('.text-two').value;
         lines[2].text = document.querySelector('.text-three').value;
@@ -59,25 +59,25 @@ function drawTextOnCanvas() {
 
 function changeFont(font) {
     ctx.font = '60px ' + font;
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
     });
 }
 
 function textAlign(alignText) {
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     if (alignText === 'left') {
         lines.forEach(element => {
             element.x = 10;
         });
     } else if (alignText === 'center') {
         lines.forEach(element => {
-            element.x = gImg.naturalWidth / 2;
+            element.x = canvas.width / 2;
         });
     } else {
         lines.forEach(element => {
-            element.x = gImg.naturalWidth - 40;
+            element.x = canvas.width - 40;
         });
     }
     ctx.textAlign = alignText;
@@ -87,7 +87,7 @@ function textAlign(alignText) {
 }
 
 function fontSize(fontSize) {
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     if (fontSize === 'increese-font-size') {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) + 2) + 'px');
     } else {
@@ -99,7 +99,7 @@ function fontSize(fontSize) {
 }
 
 function changeColor(color) {
-    ctx.drawImage(gImg, 0, 0, gImg.naturalWidth, gImg.naturalHeight);
+    ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     ctx.fillStyle = color;
     lines.forEach(element => {
         drawText(element.text, element.x, element.y);
