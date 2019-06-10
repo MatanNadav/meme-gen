@@ -6,9 +6,9 @@ function createLines() {
     let lines = getValue('lines');
     if(!lines || !lines.length) {
         lines = [
-            createLine('', 0, 0, '', '', ''),
-            createLine('', 0, 0, '', '', ''),
-            createLine('', 0, 0, '', '', '')
+            createLine('', 0, 0, '', '' ,'', ''),
+            createLine('', 0, 0, '', '' ,'', ''),
+            createLine('', 0, 0, '', '' ,'', '')
         ]
     }
     gLines = lines;
@@ -16,12 +16,13 @@ function createLines() {
     return lines;
 }
 
-function createLine(text, x, y, fontSize, align, color) {
+function createLine(text, x, y, fontSize, fontType, align, color) {
     let line = {
         text: text,
         x: x,
         y: y,
         fontSize: fontSize,
+        fontType: fontYype,
         align: align,
         color: color
     }
@@ -34,4 +35,8 @@ function saveValue(key, value) {
 
 function getValue(key) {
     return loadFromStorage(key);
+}
+
+function getLines() {
+    return gLines;
 }

@@ -3,10 +3,7 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }];
 let isUploadImg = false;
-let gRadioPrevious = document.querySelector('.radio-text-one');
-
 
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
@@ -26,6 +23,7 @@ function drawImgOnCanvas() {
 }
 
 function changedCanvasSize() {
+    let lines = getLines();
     if ($(window).width() <= 740) {
         canvas.width = 300;
         canvas.height = 300;
@@ -45,8 +43,13 @@ function resetImgSettings() {
     ctx.strokeStyle = 'black';
     ctx.textAlign = 'center';
     ctx.font = '60px impact';
+    let lines = getLines();
     lines.forEach(element => {
         element.x = canvas.width / 2;
+        element.fontSize = ctx.font.split(' ')[0];
+        element.fontType = ctx.font.split(' ')[1];
+        element.align = 'center';
+        element.color = 'white';
     });
     lines[0].y = 70;
     lines[1].y = canvas.height - 25;
@@ -55,16 +58,36 @@ function resetImgSettings() {
 
 function drawTextOnCanvas() {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
-    lines[0].text = document.querySelector('.text-top').value;
-    lines[1].text = document.querySelector('.text-bottom').value;
-    lines[2].text = document.querySelector('.text-middle').value;
+    let lines = getLines();
+    let option = document.querySelector('.line-option').value;
+    if(option === 'text-top') {
+        lines[0].text = document.querySelector('.text').value;
+    } else if(option === 'text-middle') {
+        lines[2].text = document.querySelector('.text').value;
+    } else {
+        lines[1].text = document.querySelector('.text').value;
+    }
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
     });
 }
 
 function changeFont(font) {
-    ctx.font = lines[0].fontSize + ' ' + font;
+    let lines = getLines();
+    let option = document.querySelector('.line-option').value;
+    debugger
+    if(option === 'text-top') {
+        lines[0].fontType = font;
+        ctx.font = lines[0].fontSize + ' ' + font;
+    } else if(option === 'text-middle') {
+        lines[2].fontType = font;
+        ctx.font = lines[2].fontSize + ' ' + font;
+    } else {
+        lines[1].fontType = font;
+        ctx.font = lines[1].fontSize + ' ' + font;
+    }
+    // ctx.font = lines[0].fontSize + ' ' + font;
+    // console.log(ctx.font);
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     lines.forEach(element => {
         drawOneLineTextInCanvasWidth(element);
@@ -73,6 +96,16 @@ function changeFont(font) {
 
 function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
+    let option = document.querySelector('.line-option').value
+    let lines = getLines();
+    if(option === 'text-top') {
+        lines[0].alignText = alignText;
+    } else if(option === 'text-middle') {
+        lines[2].alignText = alignText;
+    } else {
+        lines[1].alignText = alignText;
+    }
+
     if (alignText === 'left') {
         lines.forEach(element => {
             element.x = 10;
@@ -133,25 +166,31 @@ function drawText(text, posX, posY) {
     ctx.fillText(text, posX, posY);
 }
 
-function onInputChange(el) {
-    let radio;
-    if (el.dataset.trans === 'generator-text-two') {
-        radio = document.querySelector('.radio-text-two')
-        radio.checked = true;
-        gRadioPrevious.checked = false;
-        gRadioPrevious = radio;
-    } else if (el.dataset.trans === 'generator-text-three') {
-        radio = document.querySelector('.radio-text-three')
-        radio.checked = true;
-        gRadioPrevious.checked = false;
-        gRadioPrevious = radio;
-    } else {
-        radio = document.querySelector('.radio-text-one');
-        radio.checked = true;
-        gRadioPrevious.checked = false;
-        gRadioPrevious = radio;
-    }
+function getTextAlign(alignText) {
+    if(alignText === 'left') return alignText;
+    else if (alignText === 'center') return alignText;
+    return alignText
 }
+
+// function onInputChange(el) {
+//     let radio;
+//     if (el.dataset.trans === 'generator-text-two') {
+//         radio = document.querySelector('.radio-text-two')
+//         radio.checked = true;
+//         gRadioPrevious.checked = false;
+//         gRadioPrevious = radio;
+//     } else if (el.dataset.trans === 'generator-text-three') {
+//         radio = document.querySelector('.radio-text-three')
+//         radio.checked = true;
+//         gRadioPrevious.checked = false;
+//         gRadioPrevious = radio;
+//     } else {
+//         radio = document.querySelector('.radio-text-one');
+//         radio.checked = true;
+//         gRadioPrevious.checked = false;
+//         gRadioPrevious = radio;
+//     }
+// }
 
 function onContactClick() {
     document.querySelector('.contact-container').classList.toggle('in')
@@ -172,4 +211,8 @@ function onOperateModal(el) {
         emails.push(email);
         userMsg.innerText = check;
     }
+}
+
+function onGetLines() {
+    return getLines();
 }

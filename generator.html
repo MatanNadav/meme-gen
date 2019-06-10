@@ -62,18 +62,23 @@
         <section class="command-container flex row">
 
             <section class="inputs-container flex column space-between">
+                <select class="line-option">
+                    <option value="text-top">Top Line</option>
+                    <option value="text-middle">Middle Line</option>
+                    <option value="text-bottom">Bottom Line</option>
+                </select>
                 <div class="line-input">
-                    <input type="radio" checked="checked" class="radio radio-text-one"> <input type="text" class="text-top" data-trans="generator-text-one"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)"  placeholder="Enter Text Top Line" autofocus>
+                    <input type="text" class="text" data-trans="generator-text-one"
+                    onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Here" autofocus>
+                </div>
+                <!-- <div class="line-input">
+                     <input type="text" class="text-middle" data-trans="generator-text-two"
+                        onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Middle Line">
                 </div>
                 <div class="line-input">
-                    <input type="radio" class="radio radio-text-two"> <input type="text" class="text-middle" data-trans="generator-text-two"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Middle Line">
-                </div>
-                <div class="line-input">
-                    <input type="radio" class="radio radio-text-three"> <input type="text" class="text-bottom" data-trans="generator-text-three"
-                        onkeyup="drawTextOnCanvas(event)" onmousedown="onInputChange(this)" placeholder="Enter Text Bottom Line">
-                </div>
+                     <input type="text" class="text-bottom" data-trans="generator-text-three"
+                        onkeyup="drawTextOnCanvas(event)" placeholder="Enter Text Bottom Line">
+                </div> -->
             </section>
 
             <section class="buttons-container flex justify-center align-center">
