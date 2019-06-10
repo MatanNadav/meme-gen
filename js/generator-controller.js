@@ -14,7 +14,7 @@ function onInitGenerator() {
 }
 
 function drawImgOnCanvas() {
-    if(!isUploadImg) {
+    if (!isUploadImg) {
         let imgFromStorage = getValue('meme');
         gImg.src = imgFromStorage.imgUrl;
     }
@@ -118,15 +118,69 @@ function drawOneLineTextInCanvasWidth(textObj) {
     if (textWidth <= canvas.width) {
         drawText(textObj.text, textObj.x, textObj.y);
     } else {
-        let newText =  textObj.text;  
+        let newText = textObj.text;
         do {
             newText = newText.slice(0, -1);
         } while (ctx.measureText(newText).width > canvas.width)
         drawText(newText, textObj.x, textObj.y);
     }
 }
- 
+
 function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
+}
+
+function downloadCanvas(elLink) {
+    const data = canvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'my-img.jpg';
+}
+
+function onFileInputChange(ev) {
+    handleImageFromInput(ev, renderCanvas)
+}
+
+function renderCanvas(img) {
+    isUploadImg = true;
+    gImg = img;
+    canvas.width = gImg.width;
+    canvas.height = gImg.height;
+    resetImgSettings();
+    ctx.drawImage(gImg, 0, 0);
+}
+
+//UPLOAD IMG WITH INPUT FILE
+function handleImageFromInput(ev, onImageReady) {
+    document.querySelector('.share-container').innerHTML = ''
+    var reader = new FileReader();
+
+    reader.onload = function (event) {
+        var img = new Image();
+        img.onload = onImageReady.bind(null, img)
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(ev.target.files[0]);
+}
+
+function onContactClick() {
+    document.querySelector('.contact-container').classList.toggle('in')
+
+}
+
+function onOperateModal(el) {
+    let email = document.querySelector('.email-input').value
+    let userMsg = document.querySelector('.user-email-confirmation')
+    const cross = '❌';
+    const check = '✔️';
+    if (!email) {
+        userMsg = document.querySelector('.user-email-confirmation')
+        userMsg.innerText = cross;
+        return;
+    }
+    else {
+        let emails = [];
+        emails.push(email);
+        userMsg.innerText = check;
+    }
 }
