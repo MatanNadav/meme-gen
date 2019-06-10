@@ -72,7 +72,6 @@ function renderPopularSearch() {
 function onSearchMeme(inputVal) {
     if(inputVal.length < 3 && inputVal.length > 1) return;
     else if(inputVal.length === 1) {
-        // debugger
         onInitMain()
         return;
     }

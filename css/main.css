@@ -152,7 +152,7 @@ button:hover {
     max-height: 4rem;
     width: 100%;
     height: 4rem;
-    background-color: antiquewhite;
+    background-color: whitesmoke;
     margin: 2rem auto;
 }
 
@@ -185,7 +185,7 @@ button:hover {
 
 .grid-container {
     display: grid;
-    background-color: whitesmoke;
+    background-color: white;
     grid-template-rows: repeat(10, 10em);
     grid-template-columns: repeat(5, 10em);
     grid-row-gap: 20px;
