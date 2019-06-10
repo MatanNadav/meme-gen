@@ -19,7 +19,6 @@ function drawImgOnCanvas() {
     }
     gImg.onload = function () {
         changeCanvasSize();
-        resetImgSettings();
     }
 }
 
@@ -31,6 +30,7 @@ function changeCanvasSize() {
         canvas.width = gImg.naturalWidth;
         canvas.height = gImg.naturalHeight;
     }
+    resetImgSettings();
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
 }
 
