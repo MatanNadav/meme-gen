@@ -3,7 +3,7 @@
 let canvas;
 let ctx;
 let gImg = new Image();
-let lines = [{ text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }, { text: '', x: 0, y: 0, fontSize: 0 }];
+let lines = [{ text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }, { text: '', x: 0, y: 0, fontSize: 0, color: '' }];
 let isUploadImg = false;
 let gRadioPrevious = document.querySelector('.radio-text-one');
 
@@ -11,6 +11,7 @@ let gRadioPrevious = document.querySelector('.radio-text-one');
 function onInitGenerator() {
     canvas = document.querySelector('.meme-canvas')
     ctx = canvas.getContext('2d');
+    createLines();
     drawImgOnCanvas();
 }
 
