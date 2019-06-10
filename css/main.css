@@ -39,24 +39,6 @@ header {
     margin-bottom: 20px;
 }
 
-.add-meme {
-    background: #51585d;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    text-shadow: 1px 1px 0px #1c191c;
-    -moz-box-shadow: 0px 1px 3px #000000;
-    box-shadow: 0px 1px 3px #000000;
-    color: #e3910d;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-  
-.add-meme:hover {
-    background: firebrick;
-}
-
 .about-meme {
     color: black;
     display: block;
@@ -91,7 +73,7 @@ button:hover {
 
 .meme-canvas {
     border: solid 1px black;  
-  }
+}
 
 .my-canvas {
     /* margin: 20px; */
@@ -137,6 +119,42 @@ button:hover {
     color: black; 
 }
 
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+}
+
+.inputfile + label:hover {
+    cursor: pointer;
+}
+
+.generator-lang-change, .lang-change {
+    font-family: 'Lato';
+    font-weight: bold;
+    display: inline-block;
+    width: 80%;
+    cursor: pointer;
+    padding: 7px 15px;
+    outline: 0;
+    border: 2px solid white;
+    border-radius: 0px;
+    background: transparent;
+    color: black;
+    appearance: none;
+}
+
+li > p {
+    margin: 0;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+li > p:hover {
+    cursor: pointer;
+}
+
 .container {
     max-width: 980px;
     margin: 0 auto; }
@@ -151,7 +169,6 @@ button:hover {
 
 
 /* Search Container */
-
 .search-container {
     max-width: 20rem;
     max-height: 4rem;
@@ -163,9 +180,8 @@ button:hover {
 
 
 
+
 /* Popular searches */
-
-
 .popular {
     padding: 5px;
     margin: 5px;
@@ -186,8 +202,8 @@ button:hover {
     cursor: pointer;
 }
 
-/* Grid HomePage */
 
+/* Grid HomePage */
 .grid-container {
     display: grid;
     background-color: white;
@@ -316,6 +332,23 @@ ul.share-buttons .sr-only{
     overflow: hidden;
 }
 
+/* Modal */
+.modal {
+    text-align: center;
+    padding: 10px;
+}
+
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    transition: all .25s linear;
+}
+  
+.in {
+    opacity: 1;
+    transform: scale(1);
+} 
+
 /* Helpers  */
 .clean-list {
     list-style-type: none;
@@ -330,32 +363,6 @@ ul.share-buttons .sr-only{
     overflow: hidden;
     position: absolute;
     z-index: -1;
-}
-
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    display: inline-block;
-}
-
-.inputfile + label:hover {
-    cursor: pointer;
-}
-
-.generator-lang-change, .lang-change {
-    font-family: 'Lato';
-    font-weight: bold;
-    display: inline-block;
-    width: 80%;
-    cursor: pointer;
-    padding: 7px 15px;
-    outline: 0;
-    border: 2px solid white;
-    border-radius: 0px;
-    background: transparent;
-    color: black;
-    appearance: none;
 }
 
 .flex {

@@ -170,3 +170,11 @@ function handleImageFromInput(ev, onImageReady) {
     }
     reader.readAsDataURL(ev.target.files[0]);
 }
+
+function operateModal() {
+    $('.fade-scale').addClass('in')
+    $('.modal').show();
+    $('.close, .btn-secondary').click(function () {
+        $('.modal').hide();
+    })
+}
