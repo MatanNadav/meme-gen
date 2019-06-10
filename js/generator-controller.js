@@ -98,30 +98,39 @@ function textAlign(alignText) {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     let option = document.querySelector('.line-option').value
     let lines = getLines();
+    // ctx.alignText = alignText;
     if(option === 'text-top') {
         lines[0].alignText = alignText;
+        if(alignText === 'left') {
+            lines[0].x = 10;
+        } else if(alignText === 'center') {
+            lines[0].x = canvas.width / 2;
+        } else {
+            lines[0].x = canvas.width - 20;
+        }
     } else if(option === 'text-middle') {
         lines[2].alignText = alignText;
+        if(alignText === 'left') {
+            lines[2].x = 10;
+        } else if(alignText === 'center') {
+            lines[2].x = canvas.width / 2;
+        } else {
+            lines[2].x = canvas.width - 20;
+        }
     } else {
         lines[1].alignText = alignText;
-    }
-
-    if (alignText === 'left') {
-        lines.forEach(element => {
-            element.x = 10;
-        });
-    } else if (alignText === 'center') {
-        lines.forEach(element => {
-            element.x = canvas.width / 2;
-        });
-    } else {
-        lines.forEach(element => {
-            element.x = canvas.width - 20;
-        });
+        if(alignText === 'left') {
+            lines[1].x = 10;
+        } else if(alignText === 'center') {
+            lines[1].x = canvas.width / 2;
+        } else {
+            lines[1].x = canvas.width - 20;
+        }
     }
     ctx.textAlign = alignText;
     lines.forEach(element => {
         drawText(element.text, element.x, element.y);
+        // drawOneLineTextInCanvasWidth(element);
     });
 }
 
@@ -165,32 +174,6 @@ function drawText(text, posX, posY) {
     ctx.strokeText(text, posX, posY);
     ctx.fillText(text, posX, posY);
 }
-
-function getTextAlign(alignText) {
-    if(alignText === 'left') return alignText;
-    else if (alignText === 'center') return alignText;
-    return alignText
-}
-
-// function onInputChange(el) {
-//     let radio;
-//     if (el.dataset.trans === 'generator-text-two') {
-//         radio = document.querySelector('.radio-text-two')
-//         radio.checked = true;
-//         gRadioPrevious.checked = false;
-//         gRadioPrevious = radio;
-//     } else if (el.dataset.trans === 'generator-text-three') {
-//         radio = document.querySelector('.radio-text-three')
-//         radio.checked = true;
-//         gRadioPrevious.checked = false;
-//         gRadioPrevious = radio;
-//     } else {
-//         radio = document.querySelector('.radio-text-one');
-//         radio.checked = true;
-//         gRadioPrevious.checked = false;
-//         gRadioPrevious = radio;
-//     }
-// }
 
 function onContactClick() {
     document.querySelector('.contact-container').classList.toggle('in')
