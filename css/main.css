@@ -94,12 +94,13 @@ button:hover {
   }
 
 .my-canvas {
-    margin: 20px;
+    /* margin: 20px; */
+    /* margin-left: 0%; */
     z-index: 1;
 }
 
 .group-one-btns {
-    margin-left: 30%;
+    margin-left: 40%;
     width: 500px;
 }
 
@@ -123,7 +124,7 @@ button:hover {
 }
 
 .group-two-btns { 
-    margin-left: 30%;
+    margin-left: 40%;
     width: 500px;
     margin-bottom: 150px;
 }
@@ -336,4 +337,4 @@ ul.share-buttons .sr-only{
   
 .space-around {
     justify-content: space-around; 
-}
+}   
