@@ -105,7 +105,7 @@ function changeColor(color) {
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     ctx.fillStyle = color;
     lines.forEach(element => {
-        drawText(element.text, element.x, element.y);
+        drawOneLineTextInCanvasWidth(element);
     });
 }
 
