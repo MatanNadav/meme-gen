@@ -135,6 +135,7 @@ function textAlign(alignText) {
 }
 
 function fontSize(fontSize) {
+    let lines = getLines();
     ctx.drawImage(gImg, 0, 0, canvas.width, canvas.height);
     if (fontSize === 'increese-font-size') {
         ctx.font = ctx.font.replace(/\d+px/, (parseInt(ctx.font.match(/\d+px/)) + 2) + 'px');
